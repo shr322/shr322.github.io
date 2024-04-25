@@ -1,6 +1,10 @@
 window.addEventListener('load', function() {
   document.querySelector(".main").style.height = window.innerHeight + "px";
-  document.body.classList.add('on')
+  
+  setTimeout(() => {
+    document.body.classList.add('on')
+  }, 2000);
+  
 });
 
 const wrap = document.querySelector("#wrap");
