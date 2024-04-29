@@ -94,7 +94,7 @@ bindingEvent();
 
 /* 이미지 */
 const swiper = new Swiper(".swiper", {
-  loop: true,
+  loop: false,
   pagination: {
     el: ".swiper-pagination",
     type: "fraction",
