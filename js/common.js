@@ -235,3 +235,14 @@ function showToast(message) {
       document.body.removeChild(toast);
   }, 3000);
 }
+
+$(".galley li").on("click", function () {
+  let index = $(this).index();
+  console.log(index)
+  $('.popup').show();
+  swiper.slideTo(index);
+});
+
+$('.close').on('click',function(){
+  $('.popup').hide();
+})

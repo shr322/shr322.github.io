@@ -21,8 +21,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+
   </head>
-  <body>
+  <body class="on">
     <div id="wrap">
       <!-- 상단메인 -->
       <div class="cont main">
@@ -40,73 +41,14 @@
       </div>
       <!-- //기타 -->
 
-      <!-- 웨딩사진 -->
-      <div class="cont">
-        <!-- Slider main container -->
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <img src="img/1.jpg" aria-hidden="true" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/2.jpg" aria-hidden="true" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/3.jpg" aria-hidden="true" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/4.jpg" aria-hidden="true" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/5.jpg" aria-hidden="true" />
-            </div>
-            <div class="swiper-slide">
-              <img src="img/6.jpg" aria-hidden="true" />
-            </div>
-            <div class="swiper-slide"><img src="img/7.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/8.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/9.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/10.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/11.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/12.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/13.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/14.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/15.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/16.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/17.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/18.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/19.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/20.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/21.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/22.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/23.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/24.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/25.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/26.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/27.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/28.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/29.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/30.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/31.JPG" aria-hidden="true" /></div>
-            <div class="swiper-slide"><img src="img/32.JPG" aria-hidden="true" /></div>
-          </div>
-        </div>
-
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-      <!-- //웨딩사진 -->
-
       <!-- 지도 -->
       <div class="cont">
         <div class="location_button_box">
-          <a href="https://m.map.naver.com/map.naver?lat=37.5222098&amp;lng=127.038892&amp;dlevel=20&amp;mapMode=&amp;pinTitle=더채플앳청담&amp;boundary=&amp;traffic=" target="_blank">지도</a>
+          <a
+            href="https://m.map.naver.com/map.naver?lat=37.5222098&amp;lng=127.038892&amp;dlevel=20&amp;mapMode=&amp;pinTitle=더채플앳청담&amp;boundary=&amp;traffic="
+            target="_blank"
+            >지도</a
+          >
           <a href="tel:02-432-9000" class="call_btn">전화</a>
         </div>
 
@@ -132,31 +74,76 @@
       </div>
       <!-- //복사기능 -->
 
-      <!-- <div class="nav" id="nav">
-        <ul>
-          <li class="on">1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
+      <div>
+        <ul class="galley">
+          <li><img src="./img/1.jpg" alt="" /></li>
+          <li><img src="./img/2.jpg" alt="" /></li>
+          <li><img src="./img/3.jpg" alt="" /></li>
+          <li><img src="./img/4.jpg" alt="" /></li>
+          <li><img src="./img/5.jpg" alt="" /></li>
+          <li><img src="./img/6.jpg" alt="" /></li>
         </ul>
-      </div> -->
+      </div>
 
       <!-- 디데이 -->
       <div id="countdownTimer"></div>
       <!-- //디데이 -->
-
     </div>
 
-    <div id="dim">
-      우리 결혼해요.
+    <div id="dim">우리 결혼해요.</div>
+
+    <div class="popup" style="display: none">
+      <!-- 웨딩사진 -->
+      <div class="swiper-wraps">
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img src="img/1.jpg" aria-hidden="true" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/2.jpg" aria-hidden="true" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/3.jpg" aria-hidden="true" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/4.jpg" aria-hidden="true" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/5.jpg" aria-hidden="true" />
+            </div>
+            <div class="swiper-slide">
+              <img src="img/6.jpg" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <!-- //웨딩사진 -->
+      <button class="close"></button>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script
       type="text/javascript"
       src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qnoqsufu5e"
     ></script>
     <script src="js/common.js"></script>
+
+    
   </body>
 </html>

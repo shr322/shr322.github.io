@@ -70,6 +70,7 @@ img {
   }
 }
 
+.swiper-wraps {width: 100%;}
 .swiper {
   width: 100%;
   height: auto;
@@ -79,9 +80,10 @@ img {
   align-items: center;
 }
 
-.cont .swiper-button-next, .cont .swiper-rtl .swiper-button-prev,.cont .swiper-button-prev, .cont .swiper-rtl .swiper-button-next {
+.popup .swiper-button-next, .popup .swiper-rtl .swiper-button-prev,.popup .swiper-button-prev, .popup .swiper-rtl .swiper-button-next {
   color: #000
 }
+
 
 .toast {
   z-index: 999;
@@ -117,3 +119,39 @@ img {
       opacity: 0;
   }
 }
+
+
+.galley {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3개의 동일한 너비의 컬럼 */
+  grid-template-rows: repeat(3, 1fr); /* 3개의 동일한 높이의 로우 */
+  gap: 10px; /* 그리드 아이템 사이의 간격 */
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup .swiper-pagination {color: #fff;}
+.popup .close {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: transparent;
+  top: 0;
+  right: 0;
+  border: 0;
+  padding: 0;
+}
+
+.popup .close::before {content: ''; width: 5px; height: 100%; background: #fff; position: absolute; top: 0; left: 50%; transform: translateX(-50%) rotate(45deg);} 
+.popup .close::after {content: ''; width: 5px; height: 100%; background: #fff; position: absolute; top: 0; left: 50%; transform: translateX(-50%) rotate(-45deg);} 
