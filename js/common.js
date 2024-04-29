@@ -241,8 +241,10 @@ $(".galley li").on("click", function () {
   console.log(index)
   $('.popup').show();
   swiper.slideTo(index);
+  $('body').addClass('pop')
 });
 
 $('.close').on('click',function(){
   $('.popup').hide();
+  $('body').removeClass('pop')
 })
