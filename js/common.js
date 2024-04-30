@@ -1,5 +1,6 @@
 window.addEventListener('load', function() {
   document.querySelector(".main").style.height = window.innerHeight + "px";
+  document.querySelector(".popup").style.height = window.innerHeight + "px";
   
   setTimeout(() => {
     document.body.classList.add('on')
