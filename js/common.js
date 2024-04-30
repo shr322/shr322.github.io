@@ -1,10 +1,9 @@
-window.addEventListener('load', function() {
+window.addEventListener("load", function () {
   document.querySelector(".main").style.height = window.innerHeight + "px";
-  
+
   setTimeout(() => {
-    document.body.classList.add('on')
+    document.body.classList.add("on");
   }, 2000);
-  
 });
 
 const wrap = document.querySelector("#wrap");
@@ -27,7 +26,6 @@ function activeIndex() {
 // 동작 함수
 function bindingEvent() {
   setPos();
-
 
   // 버튼 클릭 시
   btns.forEach(function (el, i) {
@@ -195,14 +193,14 @@ function copyToClipboard(elementId) {
 }
 
 /* 디데이 */
-function marrayDay(){
+function marrayDay() {
   var countDownDate = new Date("2024/08/10").getTime();
   var now = new Date().getTime();
   var timeLeft = countDownDate - now;
-  var days = (Math.floor(timeLeft / (1000 * 60 * 60 * 24))) + 1 ;
+  var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24)) + 1;
 
   // 화면에 표시
-  document.getElementById("countdownTimer").innerHTML = days+ "일 ";
+  document.getElementById("countdownTimer").innerHTML = days + "일 ";
 
   // 당일
   if (days === 0) {
@@ -211,18 +209,18 @@ function marrayDay(){
 
   // 당일
   if (days < 0) {
-    document.getElementById("countdownTimer").innerHTML = "축하해 주셔서 감사합니다.";
+    document.getElementById("countdownTimer").innerHTML =
+      "축하해 주셔서 감사합니다.";
   }
 }
 
-marrayDay()
-
+marrayDay();
 
 /* 토스트팝업 */
 function showToast(message) {
   // 토스트 팝업 요소 생성
   var toast = document.createElement("div");
-  toast.classList.add('toast');
+  toast.classList.add("toast");
 
   // 토스트 팝업에 메시지 설정
   toast.textContent = message;
@@ -231,20 +229,43 @@ function showToast(message) {
   document.body.appendChild(toast);
 
   // 5초 후에 토스트 팝업 제거
-  setTimeout(function() {
-      document.body.removeChild(toast);
+  setTimeout(function () {
+    document.body.removeChild(toast);
   }, 3000);
 }
 
+// 스크롤 이벤트를 차단하는 함수
+function preventScroll(event) {
+  event.preventDefault();
+}
+
+// 스크롤 이벤트 리스너 추가하여 스크롤 차단
+function disableScroll() {
+  document.body.addEventListener('touchmove', preventScroll, { passive: false });
+  document.body.addEventListener('mousewheel', preventScroll, { passive: false });
+}
+
+// 스크롤 이벤트 리스너 제거하여 스크롤 활성화
+function enableScroll() {
+  document.body.removeEventListener('touchmove', preventScroll);
+  document.body.removeEventListener('mousewheel', preventScroll);
+}
+
+
 $(".galley li").on("click", function () {
   let index = $(this).index();
-  console.log(index)
-  $('.popup').show();
+  console.log(index);
+  $(".popup").show();
   swiper.slideTo(index);
-  $('body').addClass('pop')
+  $("body").addClass("pop");
+
+  disableScroll()
+
 });
 
-$('.close').on('click',function(){
-  $('.popup').hide();
-  $('body').removeClass('pop')
-})
+$(".close").on("click", function () {
+  $(".popup").hide();
+  $("body").removeClass("pop");
+
+  enableScroll()
+});
