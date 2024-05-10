@@ -21,24 +21,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-
-    <style>
-      .video {display: flex; align-items: center; justify-content: center; width: 100%;}
-      video{width: 100%;}
-    </style>
   </head>
-  <body class="on">
+  <body>
     <div id="wrap">
       <!-- 상단메인 -->
-      <div class="cont main video">
-        <!-- <div class="title">
+      <div class="cont main">
+        <div class="title">
           <p class="date">2024.08.10</p>
           <p class="name">심형래❤김수지</p>
-        </div> -->
-        <video  autoplay loop>
-          <source src="./1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        </div>
       </div>
       <!-- 상단메인 -->
 
@@ -98,7 +89,10 @@
       <!-- //디데이 -->
     </div>
 
-    <div id="dim">우리 결혼해요.</div>
+    <div id="dim">
+      <span class="user_name"></span>
+      &nbsp;초대합니다~
+    </div>
 
     <div class="popup" style="display: none">
       <!-- 웨딩사진 -->
@@ -151,7 +145,5 @@
       src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qnoqsufu5e"
     ></script>
     <script src="js/common.js"></script>
-
-    
   </body>
 </html>
