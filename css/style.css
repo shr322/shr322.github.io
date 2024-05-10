@@ -4,7 +4,7 @@ body {
   overflow: hidden;
 }
 body.on {overflow: scroll;}
-body.on.pop {overflow: hidden;} */
+body.on.pop {overflow: hidden;} 
 body #wrap {opacity: 0; transition: all 3s;}
 body.on #wrap {opacity: 1;}
 
@@ -34,10 +34,11 @@ img {
 }
 
 .cont.main {
-  background-image: url(/img/main_img.jpg);
+  background: #f9f2ed;
+  /* background-image: url(/img/main_img.jpg);
   background-repeat: no-repeat;
   background-position: 58% 0;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .title {
