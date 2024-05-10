@@ -4,6 +4,8 @@ window.addEventListener("load", function () {
   setTimeout(() => {
     document.body.classList.add("on");
   }, 2000);
+
+  document.querySelector('.user_name').innerHTML = paramValue;
 });
 
 const wrap = document.querySelector("#wrap");
@@ -269,3 +271,13 @@ $(".close").on("click", function () {
 
   enableScroll()
 });
+
+
+// 현재 URL에서 파라미터 문자열을 가져옵니다.
+const queryString = window.location.search;
+
+// 파라미터 문자열을 객체로 변환합니다.
+const urlParams = new URLSearchParams(queryString);
+
+// 특정 파라미터 값을 가져옵니다.
+const paramValue = urlParams.get('name');
