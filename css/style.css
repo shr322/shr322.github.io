@@ -67,7 +67,7 @@ img {
 
 
 /* gallery */
-.gallery {height: 100%;}
+.gallery {height: auto;}
 
 html,
 body {
