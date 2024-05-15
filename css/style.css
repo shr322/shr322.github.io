@@ -3,14 +3,35 @@ body {
   font-size: 16px;
   overflow: hidden;
 }
-body.on {overflow: scroll;}
-body.on.pop {overflow: hidden;} 
-body #wrap {opacity: 0; transition: all 3s;}
-body.on #wrap {opacity: 1;}
+body.on {
+  overflow: scroll;
+}
+body.on.pop {
+  overflow: hidden;
+}
+body #wrap {
+  opacity: 0;
+  transition: all 3s;
+}
+body.on #wrap {
+  opacity: 1;
+}
 
-
-body #dim{position: fixed;top: 0;left: 0;background: #fff;width: 100%;height: 100vh;overflow: hidden; display: flex; align-items: center; justify-content: center;}
-body.on #dim{display: none;}
+body #dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.on #dim {
+  display: none;
+}
 
 img {
   width: 100%;
@@ -34,11 +55,10 @@ img {
 }
 
 .cont.main {
-  background: #f9f2ed;
-  /* background-image: url(/img/main_img.jpg);
+  background-image: url(/img/main_img.jpg);
   background-repeat: no-repeat;
   background-position: 58% 0;
-  background-size: cover; */
+  background-size: cover;
 }
 
 .title {
@@ -52,17 +72,16 @@ img {
 }
 
 .title .date {
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 .title .name {
-  font-size: 1.25rem;
+  font-size: 18px;
 }
-
 
 .blink {
   animation: blink 0.5s infinite;
-  font-size: 2.5rem;
+  font-size: 36px;
 }
 
 @keyframes blink {
@@ -71,7 +90,9 @@ img {
   }
 }
 
-.swiper-wraps {width: 100%;}
+.swiper-wraps {
+  width: 100%;
+}
 .swiper {
   width: 100%;
   height: auto;
@@ -81,10 +102,12 @@ img {
   align-items: center;
 }
 
-.popup .swiper-button-next, .popup .swiper-rtl .swiper-button-prev,.popup .swiper-button-prev, .popup .swiper-rtl .swiper-button-next {
-  color: #000
+.popup .swiper-button-next,
+.popup .swiper-rtl .swiper-button-prev,
+.popup .swiper-button-prev,
+.popup .swiper-rtl .swiper-button-next {
+  color: #000;
 }
-
 
 .toast {
   z-index: 999;
@@ -92,11 +115,11 @@ img {
   bottom: 20px;
   left: 5%;
   width: 90%;
-  padding: 1rem 0;
-  border-radius: 0.25rem;
+  padding: 16px 0;
+  border-radius: 4px;
   text-align: center;
   color: #fff;
-  font-size: .875rem;
+  font-size: 14px;
   background: rgba(51, 51, 51, 0.9);
   box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.4);
   animation: slideUp 3s ease;
@@ -104,23 +127,22 @@ img {
 
 @keyframes slideUp {
   0% {
-      transform: translateY(100px);
-      opacity: 0;
+    transform: translateY(100px);
+    opacity: 0;
   }
   20% {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
   80% {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
   100% {
-      transform: translateY(100px);
-      opacity: 0;
+    transform: translateY(100px);
+    opacity: 0;
   }
 }
-
 
 .galley {
   display: grid;
@@ -133,6 +155,7 @@ img {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background: #000;
@@ -143,17 +166,44 @@ img {
   z-index: 9999;
 }
 
-.popup .swiper-pagination {color: #fff;}
+.popup .swiper-pagination {
+  color: #fff;
+  top: 20px;
+}
 .popup .close {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   position: absolute;
   background: transparent;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   border: 0;
   padding: 0;
+  z-index: 100;
 }
 
-.popup .close::before {content: ''; width: 5px; height: 100%; background: #fff; position: absolute; top: 0; left: 50%; transform: translateX(-50%) rotate(45deg);} 
-.popup .close::after {content: ''; width: 5px; height: 100%; background: #fff; position: absolute; top: 0; left: 50%; transform: translateX(-50%) rotate(-45deg);} 
+.popup .close::before {
+  content: "";
+  width: 5px;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.popup .close::after {
+  content: "";
+  width: 5px;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+
+.cont.etc {text-align: center; padding: 20px 0;}
+.cont.etc p {font-weight: bold;}
+.cont.etc p + p {margin-top: 16px;}

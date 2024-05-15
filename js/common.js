@@ -281,3 +281,7 @@ const urlParams = new URLSearchParams(queryString);
 
 // 특정 파라미터 값을 가져옵니다.
 const paramValue = urlParams.get('name');
+
+
+
+
