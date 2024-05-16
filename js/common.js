@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
-  document.querySelector(".main").style.height = window.innerHeight + "px";
-
-  document.querySelector('.user_name').innerHTML = paramValue;
+  document.querySelector(".main").style.height = screen.height + "px";
+  document.querySelector(".main").classList.add('visible')
+  // document.querySelector('.user_name').innerHTML = paramValue;
 });
 
 /* naver map */
