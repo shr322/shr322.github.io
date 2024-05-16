@@ -63,18 +63,18 @@ img {
 
 .scroll-element.visible {
   opacity: 1;
-} 
-
+}
 
 /* gallery */
-.gallery {height: auto;}
+.gallery {
+  height: auto;
+}
 
 html,
 body {
   position: relative;
   height: 100%;
 }
-
 
 swiper-slide {
   text-align: center;
@@ -119,4 +119,14 @@ swiper-container {
 
 .mySwiper2 .swiper-slide-thumb-active {
   opacity: 1;
+}
+
+.shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  width: 100%;
+  height: 100px;
+  box-shadow: inset 0px -60px 20px 0px #ffffff;
 }
