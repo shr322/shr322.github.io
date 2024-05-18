@@ -66,8 +66,12 @@ function copyToClipboard(elementId) {
   tempTextArea.select();
   document.execCommand("copy");
   document.body.removeChild(tempTextArea);
-  // alert("계좌번호가 복사되었습니다.");
-  showToast("계좌번호가 복사되었습니다.");
+  
+  if(document.querySelectorAll('.toast').length > 0){
+    return;
+  } else {
+    showToast("계좌번호가 복사되었습니다.");
+  }
 }
 
 /* 디데이 */
