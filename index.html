@@ -107,10 +107,45 @@
     </swiper-container>
   </div>
 
+   <button id="kakao-link-btn">카카오톡으로 일정 추가하기</button>
+
   <script src="js/swiper-element-bundle.min.js"></script>
   <script src="js/jquery-3.7.1.js" crossorigin="anonymous" ></script>
   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qnoqsufu5e"></script>
   <script src="js/common.js"></script>
-    
+
+  <!-- 카카오톡 링크 API 스크립트 -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+        // 발급받은 JavaScript 키로 Kakao API 초기화
+        Kakao.init('a924c86023f5b5ece51dc71f0858d18b'); // 'YOUR_APP_KEY'를 발급받은 앱 키로 교체하세요.
+
+        // 카카오톡 링크 전송 함수
+        function sendKakaoLink() {
+            Kakao.Link.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: '일정 추가하기',
+                    description: '지정된 날짜로 일정을 추가하세요.',
+                    link: {
+                        webUrl: 'https://shr322.github.io/', // 일정 추가 페이지 링크
+                        mobileWebUrl: 'https://shr322.github.io/'
+                    }
+                },
+                buttons: [
+                    {
+                        title: '일정 추가하기',
+                        link: {
+                            webUrl: 'https://shr322.github.io/', // 일정 추가 페이지 링크
+                            mobileWebUrl: 'https://shr322.github.io/'
+                        }
+                    }
+                ]
+            });
+        }
+
+        // 버튼 클릭 이벤트 리스너 등록
+        document.getElementById('kakao-link-btn').addEventListener('click', sendKakaoLink);
+    </script>
 </body>
 </html>
