@@ -1,7 +1,30 @@
+ function redirectTo(url) {
+            window.location.href = url;
+        }
+
+ function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // 특정 파라미터 값 확인
+        var parameterValue = getParameterByName('map');
+        
+
 window.addEventListener("load", function () {
   document.querySelector(".main").style.height = screen.height + "px";
   document.querySelector(".main").classList.add('visible')
   // document.querySelector('.user_name').innerHTML = paramValue;
+
+  if (parameterValue == 'naver') {
+      redirectTo("https://m.map.naver.com/map.naver?lat=37.5222098&amp;lng=127.038892&amp;dlevel=20&amp;mapMode=&amp;pinTitle=더채플앳청담&amp;boundary=&amp;traffic=")
+  } 
+  
 });
 
 /* naver map */
@@ -138,3 +161,7 @@ window.addEventListener('scroll', function() {
     }
   });
 });
+
+
+
+
