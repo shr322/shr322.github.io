@@ -1,31 +1,31 @@
- function redirectTo() {
-            window.location.href = "https://m.map.naver.com/map.naver?lat=37.5222098&lng=127.038892&dlevel=20&mapMode=&pinTitle=더채플앳청담&boundary=&traffic=";
-        }
-
- function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, '\\$&');
-            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
-
-        // 특정 파라미터 값 확인
-        var parameterValue = getParameterByName('map');
-        
-
 window.addEventListener("load", function () {
- if (parameterValue == 'naver') {
-   // redirectTo()
-  window.location.href = "https://m.map.naver.com/map.naver?lat=37.5222098&lng=127.038892&dlevel=20&mapMode=&pinTitle=더채플앳청담&boundary=&traffic=";
+  if (parameterValue == "naver") {
+    window.location.href =
+      "https://m.map.naver.com/map.naver?lat=37.5222098&lng=127.038892&dlevel=20&mapMode=&pinTitle=더채플앳청담&boundary=&traffic=";
   } else {
-     document.querySelector(".main").style.height = screen.height + "px";
-  document.querySelector(".main").classList.add('visible')
-  // document.querySelector('.user_name').innerHTML = paramValue;
+    document.querySelector(".main").style.height = screen.height + "px";
+    document.querySelector(".main").classList.add("visible");
+    // document.querySelector('.user_name').innerHTML = paramValue;
   }
+
+  // 타겟 날짜 설정 (2024년 8월 10일 14시 30분)
+  let targetDate = new Date(2024, 07, 10, 14, 30, 00); // 월은 0부터 시작합니다 (8월은 7)
+  let display = document.querySelector("#countdownTimer");
+  startCountdown(targetDate, display);
 });
+
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return "";
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+// 특정 파라미터 값 확인
+var parameterValue = getParameterByName("map");
 
 /* naver map */
 var elluce = new naver.maps.LatLng(37.5222098, 127.038892);
@@ -89,37 +89,48 @@ function copyToClipboard(elementId) {
   tempTextArea.select();
   document.execCommand("copy");
   document.body.removeChild(tempTextArea);
-  
-  if(document.querySelectorAll('.toast').length > 0){
+
+  if (document.querySelectorAll(".toast").length > 0) {
     return;
   } else {
     showToast("계좌번호가 복사되었습니다.");
   }
 }
 
-/* 디데이 */
-function marrayDay() {
-  var countDownDate = new Date("2024/08/10").getTime();
-  var now = new Date().getTime();
-  var timeLeft = countDownDate - now;
-  var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24)) + 1;
-
-  // 화면에 표시
-  document.getElementById("countdownTimer").innerHTML = days + "일 ";
-
-  // 당일
-  if (days === 0) {
-    document.getElementById("countdownTimer").innerHTML = "D-DAY";
-  }
-
-  // 당일
-  if (days < 0) {
-    document.getElementById("countdownTimer").innerHTML =
-      "축하해 주셔서 감사합니다.";
-  }
+// 두 자리 숫자로 포맷하는 함수
+function pad(number) {
+  return number < 10 ? "0" + number : number;
 }
 
-marrayDay();
+// 카운트 다운 함수
+function startCountdown(targetDate, display) {
+  let interval = setInterval(function () {
+    let now = new Date().getTime();
+    let distance = targetDate - now;
+
+    if (distance <= 0) {
+      clearInterval(interval);
+      display.textContent = "이벤트 종료!";
+    } else {
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      display.textContent =
+        pad(days) +
+        "일 " +
+        pad(hours) +
+        "시간 " +
+        pad(minutes) +
+        "분 " +
+        pad(seconds) +
+        "초 ";
+    }
+  }, 1000);
+}
 
 /* 토스트팝업 */
 function showToast(message) {
@@ -146,22 +157,16 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
 // 특정 파라미터 값을 가져옵니다.
-const paramValue = urlParams.get('name');
-
-
+const paramValue = urlParams.get("name");
 
 // 스크롤시 스르륵
-window.addEventListener('scroll', function() {
-  const elements = document.querySelectorAll('.scroll-element');
-  elements.forEach(element => {
+window.addEventListener("scroll", function () {
+  const elements = document.querySelectorAll(".scroll-element");
+  elements.forEach((element) => {
     if (element.getBoundingClientRect().top < window.innerHeight) {
       setTimeout(() => {
-        element.classList.add('visible');
+        element.classList.add("visible");
       }, 100);
     }
   });
 });
-
-
-
-
