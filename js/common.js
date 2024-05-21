@@ -1,5 +1,5 @@
- function redirectTo(url) {
-            window.location.href = url;
+ function redirectTo() {
+            window.location.href = "https://m.map.naver.com/map.naver?lat=37.5222098&lng=127.038892&dlevel=20&mapMode=&pinTitle=더채플앳청담&boundary=&traffic=";
         }
 
  function getParameterByName(name, url) {
@@ -18,7 +18,8 @@
 
 window.addEventListener("load", function () {
  if (parameterValue == 'naver') {
-   redirectTo("https://m.map.naver.com/map.naver?lat=37.5222098&lng=127.038892&dlevel=20&mapMode=&pinTitle=더채플앳청담&boundary=&traffic=")
+   // redirectTo()
+  window.location.href = "https://m.map.naver.com/map.naver?lat=37.5222098&lng=127.038892&dlevel=20&mapMode=&pinTitle=더채플앳청담&boundary=&traffic=";
   } else {
      document.querySelector(".main").style.height = screen.height + "px";
   document.querySelector(".main").classList.add('visible')
