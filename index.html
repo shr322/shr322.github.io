@@ -133,12 +133,16 @@
   
     
     <script>
-        const a = document.createElement('a');
+
+      document.getElementById('share-schedule-btn').addEventListener('click', function() {
+          const a = document.createElement('a');
         a.href = '/ics.html';
         a.target = '_blank';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
+      });
+        
     </script>
 </body>
 </html>
