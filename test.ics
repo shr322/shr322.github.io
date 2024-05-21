@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Your Organization//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:${new Date().toISOString()}
+DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").split(".")[0]}
+DTSTART:${event.startDate.replace(/[-:]/g, "").split(".")[0]}
+DTEND:${event.endDate.replace(/[-:]/g, "").split(".")[0]}
+SUMMARY:${event.title}
+DESCRIPTION:${event.description}
+LOCATION:${event.location}
+END:VEVENT
+END:VCALENDAR
