@@ -118,7 +118,10 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script>
         // 발급받은 JavaScript 키로 Kakao API 초기화
-        Kakao.init('a924c86023f5b5ece51dc71f0858d18b'); // 'YOUR_APP_KEY'를 발급받은 앱 키로 교체하세요.
+        // Kakao.init('a924c86023f5b5ece51dc71f0858d18b'); // 네이티브 앱 키	
+        // Kakao.init('16959cb0dc8e57f1badebe8e28727257'); // REST API 키	
+        // Kakao.init('9284b00e9c8c2839ef1752f4ac1ad96e'); // JavaScript 키	
+        Kakao.init('15f46e91e37f69a8fdf8c770e2c0dc6f'); // Admin 키	
 
        document.getElementById('add-schedule-btn').addEventListener('click', function() {
           Kakao.Link.sendCustom({
