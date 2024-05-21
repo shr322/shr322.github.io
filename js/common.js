@@ -17,14 +17,13 @@
         
 
 window.addEventListener("load", function () {
-  document.querySelector(".main").style.height = screen.height + "px";
+ if (parameterValue == 'naver') {
+   redirectTo("https://m.map.naver.com/map.naver?lat=37.5222098&lng=127.038892&dlevel=20&mapMode=&pinTitle=더채플앳청담&boundary=&traffic=")
+  } else {
+     document.querySelector(".main").style.height = screen.height + "px";
   document.querySelector(".main").classList.add('visible')
   // document.querySelector('.user_name').innerHTML = paramValue;
-
-  if (parameterValue == 'naver') {
-      redirectTo("https://m.map.naver.com/map.naver?lat=37.5222098&amp;lng=127.038892&amp;dlevel=20&amp;mapMode=&amp;pinTitle=더채플앳청담&amp;boundary=&amp;traffic=")
-  } 
-  
+  }
 });
 
 /* naver map */
