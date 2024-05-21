@@ -1,4 +1,4 @@
 header('Content-Type: text/calendar');
-header('Content-Disposition: attachment; filename="filename.ics"');
-readfile('path/to/yourfile.ics');
+header('Content-Disposition: attachment; filename="test.ics"');
+readfile('test.ics');
 exit;
