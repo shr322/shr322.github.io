@@ -108,6 +108,7 @@
   </div>
 
    <button id="add-schedule-btn">카카오톡 일정 추가</button>
+  <button id="share-schedule-btn">일정 공유하기</button>
 
   <script src="js/swiper-element-bundle.min.js"></script>
   <script src="js/jquery-3.7.1.js" crossorigin="anonymous" ></script>
@@ -134,5 +135,46 @@
           });
       });
     </script>
+  
+
+<script>
+document.getElementById('share-schedule-btn').addEventListener('click', function() {
+    // 일정 정보
+    const event = {
+        title: "회의",
+        description: "팀 회의",
+        location: "서울",
+        startDate: "2024-05-30T14:00:00",
+        endDate: "2024-05-30T15:00:00"
+    };
+
+    // iCalendar 파일 내용 생성
+    const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Your Organization//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:${new Date().toISOString()}
+DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}
+DTSTART:${event.startDate.replace(/[-:]/g, '').split('.')[0]}
+DTEND:${event.endDate.replace(/[-:]/g, '').split('.')[0]}
+SUMMARY:${event.title}
+DESCRIPTION:${event.description}
+LOCATION:${event.location}
+END:VEVENT
+END:VCALENDAR`;
+
+    // Blob으로 변환
+    const blob = new Blob([icsContent], { type: 'text/calendar' });
+    const url = URL.createObjectURL(blob);
+
+    // 다운로드 링크 생성 및 클릭
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'schedule.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
+</script>
 </body>
 </html>
