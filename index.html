@@ -127,11 +127,6 @@
        document.getElementById('add-schedule-btn').addEventListener('click', function() {
           Kakao.Link.sendCustom({
               templateId: 108113,  // 템플릿 ID 입력
-              templateArgs: {  // 템플릿에 전달할 파라미터
-                  'title': '회의',
-                  'description': '2024년 5월 30일 오후 2시',
-                  'schedule_date': '2024-05-30T14:00:00'
-              }
           });
       });
     </script>
