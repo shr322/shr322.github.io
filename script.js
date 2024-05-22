@@ -1,29 +1,40 @@
-// script.js
+// Import the necessary functions from the Firebase SDKs
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 
-const database = firebase.database();
-const dataInput = document.getElementById('dataInput');
-const saveButton = document.getElementById('saveButton');
-const dataList = document.getElementById('dataList');
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAlTPYqFVNOS-uqHaW4JzevfhO10Gi1Zu0",
+  authDomain: "mobile-wedding-invitatio-57515.firebaseapp.com",
+  projectId: "mobile-wedding-invitatio-57515",
+  storageBucket: "mobile-wedding-invitatio-57515.appspot.com",
+  messagingSenderId: "455033625085",
+  appId: "1:455033625085:web:d71c512b3265f67eb02194",
+  measurementId: "G-6WRFTCS8X1"
+};
 
-// 데이터 저장 함수
-saveButton.addEventListener('click', () => {
-  const data = dataInput.value;
-  if (data) {
-    const newDataRef = database.ref('data').push();
-    newDataRef.set({
-      text: data
-    });
-    dataInput.value = '';  // 입력 필드 초기화
-  }
-});
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-// 데이터 불러오기 및 실시간 업데이트 함수
-database.ref('data').on('value', (snapshot) => {
-  dataList.innerHTML = '';  // 기존 데이터 초기화
-  snapshot.forEach((childSnapshot) => {
-    const dataItem = childSnapshot.val();
-    const li = document.createElement('li');
-    li.textContent = dataItem.text;
-    dataList.appendChild(li);
+document.addEventListener('DOMContentLoaded', (event) => {
+  const heartButton = document.getElementById('heartButton');
+  const heartCount = document.getElementById('heartCount');
+
+  // Initialize count from Firestore
+  let count = 0;
+  const heartDocRef = doc(db, 'counts', 'heartCount');
+
+  getDoc(heartDocRef).then((docSnap) => {
+    if (docSnap.exists()) {
+      count = docSnap.data().value;
+      heartCount.textContent = count;
+    }
+  });
+
+  heartButton.addEventListener('click', () => {
+    count++;
+    heartCount.textContent = count;
+    setDoc(heartDocRef, { value: count });
   });
 });
