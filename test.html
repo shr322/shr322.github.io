@@ -17,9 +17,9 @@
   </div>
 
   <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
-  <script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+   <script>
     // Firebase 초기화
     const firebaseConfig = {
       apiKey: "AIzaSyAlTPYqFVNOS-uqHaW4JzevfhO10Gi1Zu0",
@@ -33,6 +33,12 @@
     firebase.initializeApp(firebaseConfig);
   </script>
   <!-- Your custom script -->
-  <script src="script.js"></script>
+  <script>
+    const db = firebase.firestore();
+
+    db.collection('product').get().then((결과)=>{
+      console.log(결과)
+    })
+  </script>
 </body>
 </html>
