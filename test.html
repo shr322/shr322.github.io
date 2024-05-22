@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My GitHub Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Firebase SDK 설정 코드 -->
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAlTPYqFVNOS-uqHaW4JzevfhO10Gi1Zu0",
+    authDomain: "mobile-wedding-invitatio-57515.firebaseapp.com",
+    projectId: "mobile-wedding-invitatio-57515",
+    storageBucket: "mobile-wedding-invitatio-57515.appspot.com",
+    messagingSenderId: "455033625085",
+    appId: "1:455033625085:web:d71c512b3265f67eb02194",
+    measurementId: "G-6WRFTCS8X1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</head>
+<body>
+  <div class="content">
+    <h1>Welcome to My Page</h1>
+    <button id="heartButton">❤️ <span id="heartCount">0</span></button>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const heartButton = document.getElementById('heartButton');
+      const heartCount = document.getElementById('heartCount');
+      
+      // Initialize count from Firestore
+      let count = 0;
+      db.collection('counts').doc('heartCount').get().then((doc) => {
+        if (doc.exists) {
+          count = doc.data().value;
+          heartCount.textContent = count;
+        }
+      });
+    
+      heartButton.addEventListener('click', () => {
+        count++;
+        heartCount.textContent = count;
+        db.collection('counts').doc('heartCount').set({ value: count });
+      });
+    });
+
+  </script>
+</body>
+</html>
