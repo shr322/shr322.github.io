@@ -36,9 +36,9 @@
   <script>
     const db = firebase.firestore();
 
-    db.collection('product').get().then((결과)=>{
-      console.log(결과)
-    })
+    const heartDocRef = doc(db, 'counts', 'heartCount');
+
+    console.log(heartDocRef)
   </script>
 </body>
 </html>
