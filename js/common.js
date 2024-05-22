@@ -3,8 +3,8 @@ window.addEventListener("load", function () {
     window.location.href =
       "https://m.map.naver.com/map.naver?lat=37.5222098&lng=127.038892&dlevel=20&mapMode=&pinTitle=더채플앳청담&boundary=&traffic=";
   } else {
-    document.querySelector(".main").style.height = screen.height + "px";
-    document.querySelector(".main").classList.add("visible");
+    // document.querySelector(".main").style.height = screen.height + "px";
+    // document.querySelector(".main").classList.add("visible");
     // document.querySelector('.user_name').innerHTML = paramValue;
   }
 
