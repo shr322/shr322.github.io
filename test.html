@@ -6,16 +6,10 @@
   <title>My GitHub Page</title>
   <link rel="stylesheet" href="styles.css">
   <!-- Firebase SDK 설정 코드 -->
-  <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script>
+    const firebaseConfig = {
     apiKey: "AIzaSyAlTPYqFVNOS-uqHaW4JzevfhO10Gi1Zu0",
     authDomain: "mobile-wedding-invitatio-57515.firebaseapp.com",
     projectId: "mobile-wedding-invitatio-57515",
@@ -24,6 +18,9 @@
     appId: "1:455033625085:web:d71c512b3265f67eb02194",
     measurementId: "G-6WRFTCS8X1"
   };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
