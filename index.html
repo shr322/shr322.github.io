@@ -1,149 +1,217 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="심형래❤️김수지" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="img/kakao_share_img.jpg" />
-  <meta property="og:description" content="더채플앳청담, 2024.08.10" />
-  <title>심형래❤김수지</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/swiper-bundle.min.css"> 
-</head>
-<body>
-  <div id="wrap">
-    <!-- 상단메인 -->
-    <div class="cont main scroll-element">
-      
-    </div>
-    <!-- 상단메인 -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="심형래❤️김수지" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/kakao_share_img.jpg" />
+    <meta property="og:description" content="더채플앳청담, 2024.08.10" />
+    <title>심형래❤김수지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
 
-    <!-- 지도 -->
-    <div class="cont scroll-element">
-      <div class="location_button_box">
-        <a
-          href="https://m.map.naver.com/map.naver?lat=37.5222098&amp;lng=127.038892&amp;dlevel=20&amp;mapMode=&amp;pinTitle=더채플앳청담&amp;boundary=&amp;traffic="
-          target="_blank"
-          >지도</a
-        >
-        <a href="tel:02-432-9000" class="call_btn">전화</a>
+    <style>
+      :root {
+        --max-width: 400px;
+      }
+
+      body,
+      html {
+        background: #f1e0cd;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .test-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+
+      .test-bg {
+        max-width: var(--max-width);
+
+        position: fixed;
+        z-index: 1;
+      }
+
+      .test-cont {
+        max-width: var(--max-width);
+
+        position: relative;
+        width: 100%;
+        background: red;
+        margin-top: 300px;
+        z-index: 2;
+      }
+
+      .test-dim {
+        max-width: var(--max-width);
+        margin: 0 auto;
+
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 4;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap" class="test-wrap">
+      <div class="test-bg">
+        <img src="bg.jpg" alt="" />
       </div>
 
-      <div class="map">
-        <h1>오시는 길</h1>
-        <div id="map" style="width: 100%; height: 300px"></div>
-        <code id="snippet" class="snippet"></code>
+      <div class="test-cont">
+        <!-- 상단메인 -->
+        <div class="cont main scroll-element"></div>
+        <!-- 상단메인 -->
+
+        <!-- 지도 -->
+        <div class="cont scroll-element">
+          <div class="location_button_box">
+            <a
+              href="https://m.map.naver.com/map.naver?lat=37.5222098&amp;lng=127.038892&amp;dlevel=20&amp;mapMode=&amp;pinTitle=더채플앳청담&amp;boundary=&amp;traffic="
+              target="_blank"
+              >지도</a
+            >
+            <a href="tel:02-432-9000" class="call_btn">전화</a>
+          </div>
+
+          <div class="map">
+            <h1>오시는 길</h1>
+            <div id="map" style="width: 100%; height: 300px"></div>
+            <code id="snippet" class="snippet"></code>
+          </div>
+        </div>
+        <!-- //지도 -->
+
+        <!-- 복사기능 -->
+        <div class="cont scroll-element">
+          <p>110464249470</p>
+          <button onclick="copyToClipboard('심형래')">심형래</button>
+
+          <p>두 번째 텍스트입니다.</p>
+          <button onclick="copyToClipboard('김수지')">김수지</button>
+        </div>
+        <!-- //복사기능 -->
+
+        <!-- 디데이 -->
+        <div id="countdownTimer" class="scroll-element"></div>
+        <!-- //디데이 -->
+
+        <div class="gallery scroll-element">
+          <swiper-container
+            style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+            class="mySwiper"
+            thumbs-swiper=".mySwiper2"
+            loop="true"
+            space-between="10"
+            navigation="true"
+          >
+            <swiper-slide>
+              <img src="img/1.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="img/2.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="img/3.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="img/4.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="img/5.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="img/6.jpg" />
+            </swiper-slide>
+          </swiper-container>
+    
+          <swiper-container
+            class="mySwiper2"
+            loop="true"
+            space-between="10"
+            slides-per-view="4"
+            free-mode="true"
+            watch-slides-progress="true"
+          >
+            <swiper-slide>
+              <img src="img/1.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="img/2.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="img/3.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="img/4.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="img/5.jpg" />
+            </swiper-slide>
+            <swiper-slide>
+              <img src="img/6.jpg" />
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </div>
+
+      <div class="test-dim" style="bottom: -100px;">
+        <img src="letter.png" alt="">
       </div>
     </div>
-    <!-- //지도 -->
 
-    <!-- 복사기능 -->
-    <div class="cont scroll-element">
-      <p>110464249470</p>
-      <button onclick="copyToClipboard('심형래')">
-        심형래
-      </button>
+   
 
-      <p>두 번째 텍스트입니다.</p>
-      <button onclick="copyToClipboard('김수지')">
-        김수지
-      </button>
-    </div>
-    <!-- //복사기능 -->
+    <button id="add-schedule-btn">카카오톡 공유하기</button>
 
-    <!-- 디데이 -->
-    <div id="countdownTimer" class="scroll-element"></div>
-    <!-- //디데이 -->
-  </div>
+    <script src="js/swiper-element-bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.js" crossorigin="anonymous"></script>
+    <script
+      type="text/javascript"
+      src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qnoqsufu5e"
+    ></script>
+    <script src="js/common.js"></script>
 
-  <div class="gallery scroll-element">
-    <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper"
-      thumbs-swiper=".mySwiper2" loop="true" space-between="10" navigation="true">
-      <swiper-slide>
-        <img src="img/1.jpg" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="img/2.jpg" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="img/3.jpg" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="img/4.jpg" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="img/5.jpg" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="img/6.jpg" />
-      </swiper-slide>
-    </swiper-container>
-
-    <swiper-container class="mySwiper2" loop="true" space-between="10" slides-per-view="4" free-mode="true"
-      watch-slides-progress="true">
-      <swiper-slide>
-        <img src="img/1.jpg" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="img/2.jpg" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="img/3.jpg" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="img/4.jpg" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="img/5.jpg" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="img/6.jpg" />
-      </swiper-slide>
-    </swiper-container>
-  </div>
-
-   <button id="add-schedule-btn">카카오톡 공유하기</button>
-  <button id="share-schedule-btn">일정 추가하기</button>
-
-  <script src="js/swiper-element-bundle.min.js"></script>
-  <script src="js/jquery-3.7.1.js" crossorigin="anonymous" ></script>
-  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=qnoqsufu5e"></script>
-  <script src="js/common.js"></script>
-
-  <!-- 카카오톡 링크 API 스크립트 -->
+    <!-- 카카오톡 링크 API 스크립트 -->
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script>
-        // 발급받은 JavaScript 키로 Kakao API 초기화
-        // Kakao.init('a924c86023f5b5ece51dc71f0858d18b'); // 네이티브 앱 키	
-        // Kakao.init('16959cb0dc8e57f1badebe8e28727257'); // REST API 키	
-        Kakao.init('9284b00e9c8c2839ef1752f4ac1ad96e'); // JavaScript 키	
-        // Kakao.init('15f46e91e37f69a8fdf8c770e2c0dc6f'); // Admin 키	
+      // 발급받은 JavaScript 키로 Kakao API 초기화
+      Kakao.init("9284b00e9c8c2839ef1752f4ac1ad96e"); // JavaScript 키
 
-       document.getElementById('add-schedule-btn').addEventListener('click', function() {
+      document
+        .getElementById("add-schedule-btn")
+        .addEventListener("click", function () {
           Kakao.Link.sendCustom({
-              templateId: 108113,  // 템플릿 ID 입력
+            templateId: 108113, // 템플릿 ID 입력
           });
-      });
+        });
     </script>
-  
-    
-    <script>
 
-      document.getElementById('share-schedule-btn').addEventListener('click', function() {
-          const a = document.createElement('a');
-        a.href = '/ics.php';
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+    <script>
+      // 스크롤 이벤트 리스너 추가
+      window.addEventListener('scroll', function() {
+          // 현재 스크롤 위치 가져오기
+          var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+          if(scrollPosition > 100){
+            document.querySelector('.test-dim').style.bottom = '-' + scrollPosition + 'px';
+          }
       });
-        
-    </script>
-</body>
+  </script>
+  </body>
 </html>
