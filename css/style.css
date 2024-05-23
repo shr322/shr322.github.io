@@ -135,9 +135,6 @@ img {
   background-color: rgb(254, 253, 250);
   z-index: 2;
   padding: 30px 30px 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .dim {
