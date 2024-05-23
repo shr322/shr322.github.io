@@ -64,6 +64,16 @@
         right: 0;
         z-index: 4;
       }
+
+      canvas {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;;
+      }
     </style>
   </head>
   <body>
@@ -96,7 +106,9 @@
         </div>
         <!-- //지도 -->
 
-        <button id="heartButton" onclick="confetti()">❤️ <span id="heartCount">0</span></button>
+        <canvas id="canvas1"></canvas>
+
+        <button id="heartButton" onclick="birthDay2024().setConfetti();">❤️ <span id="heartCount">0</span></button>
 
         <!-- 복사기능 -->
         <div class="cont scroll-element">
@@ -216,6 +228,46 @@
       });
   </script>
 
+<script src="js/confetti.browser.min.js"></script>
+<script>
+  birthDay2024 = function () {
+    return {
+      setConfetti() {
+        const canvas1 = document.getElementById("canvas1");
+        const configs = [
+          {
+            angle: 60,
+            spread: 55,
+            particleCount: randomInRange(50, 100),
+            origin: { x: 0, y: 0.8 },
+          },
+          {
+            angle: 120,
+            spread: 55,
+            particleCount: randomInRange(50, 100),
+            origin: { x: 1, y: 0.8 },
+          },
+        ];
+
+          canvas1.confetti = canvas1.confetti || confetti.create(canvas1, {resize: true});
+
+          function randomInRange(min, max) {
+            return (Math.random() * (max - min) + min) *2;
+          }
+
+          canvas1.confetti(configs[0]);
+          canvas1.confetti(configs[1]);
+
+      },
+
+      shootConfetti(){
+        birthDay2024().setConfetti();
+      }
+    };
+  };
+
+
+</script>
     <script src="js/heart.js" type="module"></script>
   </body>
 </html>
