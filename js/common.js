@@ -3,8 +3,8 @@ window.addEventListener("load", function () {
     window.location.href =
       "https://m.map.naver.com/map.naver?lat=37.5222098&lng=127.038892&dlevel=20&mapMode=&pinTitle=더채플앳청담&boundary=&traffic=";
   } else {
-    document.querySelector(".main").style.height = screen.height + "px";
-    // document.querySelector(".main").classList.add("visible");
+    document.querySelector(".main").classList.add("visible");
+    // document.querySelector(".main").style.height = screen.height + "px";
     // document.querySelector('.user_name').innerHTML = paramValue;
   }
 
@@ -170,3 +170,64 @@ window.addEventListener("scroll", function () {
     }
   });
 });
+
+
+
+// 발급받은 JavaScript 키로 Kakao API 초기화
+Kakao.init("9284b00e9c8c2839ef1752f4ac1ad96e"); // JavaScript 키
+
+document
+  .getElementById("add-schedule-btn")
+  .addEventListener("click", function () {
+    Kakao.Link.sendCustom({
+      templateId: 108113, // 템플릿 ID 입력
+    });
+  });
+
+
+  // 스크롤 이벤트 리스너 추가
+  window.addEventListener("scroll", function () {
+    // 현재 스크롤 위치 가져오기
+    var scrollPosition =
+      window.scrollY || document.documentElement.scrollTop;
+
+      document.querySelector(".dim").style.bottom = "-" + scrollPosition + "px";
+  });
+
+  
+  // 버튼 클릭시 모션
+  heartCount = function () {
+    return {
+      setConfetti() {
+        const canvas1 = document.getElementById("canvas1");
+        const configs = [
+          {
+            angle: 60,
+            spread: 55,
+            particleCount: randomInRange(50, 100),
+            origin: { x: 0, y: 0.8 },
+          },
+          {
+            angle: 120,
+            spread: 55,
+            particleCount: randomInRange(50, 100),
+            origin: { x: 1, y: 0.8 },
+          },
+        ];
+
+        canvas1.confetti =
+          canvas1.confetti || confetti.create(canvas1, { resize: true });
+
+        function randomInRange(min, max) {
+          return (Math.random() * (max - min) + min) * 2;
+        }
+
+        canvas1.confetti(configs[0]);
+        canvas1.confetti(configs[1]);
+      },
+
+      shootConfetti() {
+        heartCount().setConfetti();
+      },
+    };
+  };
