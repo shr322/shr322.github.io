@@ -69,6 +69,9 @@ img {
   display: block;
   padding-top: 60px;
   margin-top: 30px;
+  text-decoration: none;
+  color: #333;
+  font-size: 12px;
 }
 .bg-arrow span {
   position: absolute;
@@ -133,12 +136,52 @@ img {
   position: relative;
   max-width: var(--max-width);
   width: 100%;
-  margin-top: 380px;
+  margin-top: 400px;
   background-color: rgb(254, 253, 250);
   z-index: 2;
-  padding: 30px 30px 0px;
+  padding: 20px 20px 0px;
 }
 
+.toggle-box-wrap {
+  margin-top: 50px;
+}
+.toggleButton {
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  padding: 20px;
+  font-weight: 500;
+  text-align: left;
+  border-radius: 10px 10px 0 0;
+  transition: all 0.5s;
+  border: 1px solid #ccc;
+}
+
+.toggle-box.hidden .toggleButton {
+  border-radius: 10px;
+}
+
+.toggle-item {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-top: 0;
+  border-radius: 0px 0px 10px 10px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.toggle-box:nth-child(2){
+  margin-top: 30px;
+}
+
+.toggle-box.hidden .toggle-item {
+  max-height: 0;
+  border: 0;
+}
 
 
 .item {
@@ -147,6 +190,8 @@ img {
   height: 100%;
   margin-top: 50px;
 }
+
+.item:first-child {margin-top: 0;}
 
 .section2,.section3 {
   font-size: 18px;
@@ -157,7 +202,7 @@ img {
 
 .dim {
   max-width: var(--max-width);
-  margin: 0 auto -50px;
+  margin: 0 auto -100px;
   position: fixed;
   left: 0;
   right: 0;
