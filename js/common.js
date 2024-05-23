@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
     window.location.href =
       "https://m.map.naver.com/map.naver?lat=37.5222098&lng=127.038892&dlevel=20&mapMode=&pinTitle=더채플앳청담&boundary=&traffic=";
   } else {
-    document.querySelector(".main").classList.add("visible");
+    // document.querySelector(".main").classList.add("visible");
     // document.querySelector(".main").style.height = screen.height + "px";
     // document.querySelector('.user_name').innerHTML = paramValue;
 
@@ -13,9 +13,10 @@ window.addEventListener("load", function () {
       button.addEventListener("click", function () {
         var targetId = this.getAttribute("data-target");
         var toggleBox = document.getElementById(targetId);
-
-        toggleBox.classList.toggle("hidden");
-        if (toggleBox.classList.contains("hidden")) {
+        var toggleWrap = button.parentElement;
+  
+        toggleWrap.classList.toggle("hidden");
+        if (toggleWrap.classList.contains("hidden")) {
           toggleBox.style.maxHeight = "0";
         } else {
           var contentHeight =
