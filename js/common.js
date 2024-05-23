@@ -6,6 +6,30 @@ window.addEventListener("load", function () {
     document.querySelector(".main").classList.add("visible");
     // document.querySelector(".main").style.height = screen.height + "px";
     // document.querySelector('.user_name').innerHTML = paramValue;
+
+    var toggleButtons = document.querySelectorAll(".toggleButton");
+
+    toggleButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        var targetId = this.getAttribute("data-target");
+        var toggleBox = document.getElementById(targetId);
+
+        toggleBox.classList.toggle("hidden");
+        if (toggleBox.classList.contains("hidden")) {
+          toggleBox.style.maxHeight = "0";
+        } else {
+          var contentHeight =
+            toggleBox.querySelector(".boxContent").clientHeight;
+          toggleBox.style.maxHeight = contentHeight + "px";
+        }
+      });
+
+      // 초기 높이 설정
+      var targetId = button.getAttribute("data-target");
+      var toggleBox = document.getElementById(targetId);
+      var contentHeight = toggleBox.querySelector(".boxContent").clientHeight;
+      toggleBox.style.maxHeight = "0";
+    });
   }
 
   // 타겟 날짜 설정 (2024년 8월 10일 14시 30분)
@@ -171,8 +195,6 @@ window.addEventListener("scroll", function () {
   });
 });
 
-
-
 // 발급받은 JavaScript 키로 Kakao API 초기화
 Kakao.init("9284b00e9c8c2839ef1752f4ac1ad96e"); // JavaScript 키
 
@@ -184,50 +206,47 @@ document
     });
   });
 
+// 스크롤 이벤트 리스너 추가
+window.addEventListener("scroll", function () {
+  // 현재 스크롤 위치 가져오기
+  var scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-  // 스크롤 이벤트 리스너 추가
-  window.addEventListener("scroll", function () {
-    // 현재 스크롤 위치 가져오기
-    var scrollPosition =
-      window.scrollY || document.documentElement.scrollTop;
+  document.querySelector(".dim").style.bottom = "-" + scrollPosition + "px";
+});
 
-      document.querySelector(".dim").style.bottom = "-" + scrollPosition + "px";
-  });
+// 버튼 클릭시 모션
+heartCount = function () {
+  return {
+    setConfetti() {
+      const canvas1 = document.getElementById("canvas1");
+      const configs = [
+        {
+          angle: 60,
+          spread: 55,
+          particleCount: randomInRange(50, 100),
+          origin: { x: 0, y: 0.8 },
+        },
+        {
+          angle: 120,
+          spread: 55,
+          particleCount: randomInRange(50, 100),
+          origin: { x: 1, y: 0.8 },
+        },
+      ];
 
-  
-  // 버튼 클릭시 모션
-  heartCount = function () {
-    return {
-      setConfetti() {
-        const canvas1 = document.getElementById("canvas1");
-        const configs = [
-          {
-            angle: 60,
-            spread: 55,
-            particleCount: randomInRange(50, 100),
-            origin: { x: 0, y: 0.8 },
-          },
-          {
-            angle: 120,
-            spread: 55,
-            particleCount: randomInRange(50, 100),
-            origin: { x: 1, y: 0.8 },
-          },
-        ];
+      canvas1.confetti =
+        canvas1.confetti || confetti.create(canvas1, { resize: true });
 
-        canvas1.confetti =
-          canvas1.confetti || confetti.create(canvas1, { resize: true });
+      function randomInRange(min, max) {
+        return (Math.random() * (max - min) + min) * 2;
+      }
 
-        function randomInRange(min, max) {
-          return (Math.random() * (max - min) + min) * 2;
-        }
+      canvas1.confetti(configs[0]);
+      canvas1.confetti(configs[1]);
+    },
 
-        canvas1.confetti(configs[0]);
-        canvas1.confetti(configs[1]);
-      },
-
-      shootConfetti() {
-        heartCount().setConfetti();
-      },
-    };
+    shootConfetti() {
+      heartCount().setConfetti();
+    },
   };
+};
