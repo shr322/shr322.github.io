@@ -41,8 +41,139 @@
         </div>
         <!-- 상단메인 -->
 
+        <style>
+          /* styles.css */
+          .container {
+            text-align: center;
+            margin-top: 50px;
+          }
+
+          .box {
+            width: 300px;
+            margin: 20px auto;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid #ccc; */
+            border-radius: 5px;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+          }
+
+          .box.hidden {
+            max-height: 0;
+          }
+        </style>
+
+        <div class="container">
+          <button class="toggleButton" data-target="toggleBox1">
+            Toggle Box 1
+          </button>
+          <div id="toggleBox1" class="box hidden">
+            <div class="boxContent">
+              <p>110464249470</p>
+              <button onclick="copyToClipboard('심형래')">심형래</button>
+
+              <p>두 번째 텍스트입니다.</p>
+              <button onclick="copyToClipboard('김수지')">김수지</button>
+            </div>
+          </div>
+
+          <button class="toggleButton" data-target="toggleBox2">
+            Toggle Box 2
+          </button>
+          <div id="toggleBox2" class="box hidden">
+            <div class="boxContent">
+              <p>110464249470</p>
+              <button onclick="copyToClipboard('심형래')">심형래</button>
+
+              <p>두 번째 텍스트입니다.</p>
+              <button onclick="copyToClipboard('김수지')">김수지</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item section2 scroll-element">
+          <p>축복해 주세요.</p>
+        </div>
+        <div class="item section3 scroll-element">
+          <p>심원구 &middot; 김인숙 의 장남 <span class="fw-500">형래</span></p>
+          <p>김현돈 &middot; 이영란 의 장녀 <span class="fw-500">수지</span></p>
+        </div>
+
+        <!-- 갤러리 -->
+        <div class="gallery-box">
+          <div class="gallery scroll-element">
+            <swiper-container
+              style="
+                --swiper-navigation-color: #fff;
+                --swiper-pagination-color: #fff;
+              "
+              class="mySwiper"
+              thumbs-swiper=".mySwiper2"
+              loop="true"
+              space-between="10"
+              navigation="true"
+            >
+              <swiper-slide>
+                <img src="img/1.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/2.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/3.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/4.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/5.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/6.jpg" />
+              </swiper-slide>
+            </swiper-container>
+
+            <swiper-container
+              class="mySwiper2"
+              loop="true"
+              space-between="10"
+              slides-per-view="4"
+              free-mode="true"
+              watch-slides-progress="true"
+            >
+              <swiper-slide>
+                <img src="img/1.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/2.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/3.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/4.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/5.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/6.jpg" />
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+        <!-- //갤러리 -->
+
         <!-- 지도 -->
         <div class="item scroll-element">
+          <div class="map">
+            <h1>오시는 길</h1>
+            <div id="map" style="width: 100%; height: 300px"></div>
+            <code id="snippet" class="snippet"></code>
+          </div>
           <div class="location_button_box">
             <a
               href="https://m.map.naver.com/map.naver?lat=37.5222098&amp;lng=127.038892&amp;dlevel=20&amp;mapMode=&amp;pinTitle=더채플앳청담&amp;boundary=&amp;traffic="
@@ -50,12 +181,6 @@
               >지도</a
             >
             <a href="tel:02-432-9000" class="call_btn">전화</a>
-          </div>
-
-          <div class="map">
-            <h1>오시는 길</h1>
-            <div id="map" style="width: 100%; height: 300px"></div>
-            <code id="snippet" class="snippet"></code>
           </div>
         </div>
         <!-- //지도 -->
@@ -71,80 +196,9 @@
           <button id="add-schedule-btn">카카오톡 공유하기</button>
         </div>
 
-        <!-- 복사기능 -->
-        <div class="item scroll-element">
-          <p>110464249470</p>
-          <button onclick="copyToClipboard('심형래')">심형래</button>
-
-          <p>두 번째 텍스트입니다.</p>
-          <button onclick="copyToClipboard('김수지')">김수지</button>
-        </div>
-        <!-- //복사기능 -->
-
         <!-- 디데이 -->
         <div id="countdownTimer" class="scroll-element"></div>
         <!-- //디데이 -->
-
-        <div class="gallery scroll-element">
-          <swiper-container
-            style="
-              --swiper-navigation-color: #fff;
-              --swiper-pagination-color: #fff;
-            "
-            class="mySwiper"
-            thumbs-swiper=".mySwiper2"
-            loop="true"
-            space-between="10"
-            navigation="true"
-          >
-            <swiper-slide>
-              <img src="img/1.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="img/2.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="img/3.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="img/4.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="img/5.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="img/6.jpg" />
-            </swiper-slide>
-          </swiper-container>
-
-          <swiper-container
-            class="mySwiper2"
-            loop="true"
-            space-between="10"
-            slides-per-view="4"
-            free-mode="true"
-            watch-slides-progress="true"
-          >
-            <swiper-slide>
-              <img src="img/1.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="img/2.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="img/3.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="img/4.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="img/5.jpg" />
-            </swiper-slide>
-            <swiper-slide>
-              <img src="img/6.jpg" />
-            </swiper-slide>
-          </swiper-container>
-        </div>
       </div>
 
       <div class="dim" style="bottom: 0">
