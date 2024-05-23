@@ -36,60 +36,34 @@
 
       <div class="content">
         <!-- 상단메인 -->
-        <div class="item main scroll-element">
+        <div class="item main">
           <img src="img/3.jpg" alt="" />
         </div>
         <!-- 상단메인 -->
 
-        <style>
-          /* styles.css */
-          .container {
-            text-align: center;
-            margin-top: 50px;
-          }
+        <div class="toggle-box-wrap">
+          <div class="toggle-box hidden">
+            <button class="toggleButton" data-target="toggleBox1">신랑 측</button>
+            <div id="toggleBox1" class="toggle-item">
+              <div class="boxContent">
+                <p>110464249470</p>
+                <button onclick="copyToClipboard('심형래')">심형래</button>
 
-          .box {
-            width: 300px;
-            margin: 20px auto;
-            background-color: lightblue;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* border: 1px solid #ccc; */
-            border-radius: 5px;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-          }
-
-          .box.hidden {
-            max-height: 0;
-          }
-        </style>
-
-        <div class="container">
-          <button class="toggleButton" data-target="toggleBox1">
-            Toggle Box 1
-          </button>
-          <div id="toggleBox1" class="box hidden">
-            <div class="boxContent">
-              <p>110464249470</p>
-              <button onclick="copyToClipboard('심형래')">심형래</button>
-
-              <p>두 번째 텍스트입니다.</p>
-              <button onclick="copyToClipboard('김수지')">김수지</button>
+                <p>두 번째 텍스트입니다.</p>
+                <button onclick="copyToClipboard('김수지')">김수지</button>
+              </div>
             </div>
           </div>
+          <div class="toggle-box hidden">
+            <button class="toggleButton" data-target="toggleBox2">신부 측</button>
+            <div id="toggleBox2" class="toggle-item">
+              <div class="boxContent">
+                <p>110464249470</p>
+                <button onclick="copyToClipboard('심형래')">심형래</button>
 
-          <button class="toggleButton" data-target="toggleBox2">
-            Toggle Box 2
-          </button>
-          <div id="toggleBox2" class="box hidden">
-            <div class="boxContent">
-              <p>110464249470</p>
-              <button onclick="copyToClipboard('심형래')">심형래</button>
-
-              <p>두 번째 텍스트입니다.</p>
-              <button onclick="copyToClipboard('김수지')">김수지</button>
+                <p>두 번째 텍스트입니다.</p>
+                <button onclick="copyToClipboard('김수지')">김수지</button>
+              </div>
             </div>
           </div>
         </div>
