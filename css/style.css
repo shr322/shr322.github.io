@@ -162,7 +162,7 @@ img {
   margin: 20px;
 }
 
-toggle-item.open .toggleBox {
+.toggle-item.open .toggleBox {
   border: 1px solid #ccc;
 }
 
