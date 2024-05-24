@@ -141,73 +141,30 @@ img {
   z-index: 2;
   padding: 20px 20px 0px;
 }
-
-/* .toggle-box-wrap {
-  margin-top: 50px;
-}
 .toggleButton {
-  width: 100%;
-  border: none;
+  padding: 10px 20px;
   font-size: 16px;
-  padding: 20px;
-  font-weight: 500;
-  text-align: left;
-  border-radius: 10px 10px 0 0;
-  transition: all 0.5s;
-  border: 1px solid #ccc;
+  cursor: pointer;
+  margin: 10px 0;
 }
 
-.toggle-box.hidden .toggleButton {
-  border-radius: 10px;
-}
-
-.toggle-item {
-  width: 100%;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-top: 0;
-  border-radius: 0px 0px 10px 10px;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-.toggle-box:nth-child(2){
-  margin-top: 30px;
-}
-
-.toggle-box.hidden .toggle-item {
+.toggleBox {
+  width: 300px;
   max-height: 0;
-  border: 0;
-} */
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: max-height 0.5s ease, border 0.5s ease;
+  border: 0 solid #ccc;
+}
 
-.toggleButton {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        margin: 10px 0;
-      }
+.toggleBox p {
+  margin: 20px;
+}
 
-      .toggleBox {
-        width: 300px;
-        max-height: 0;
-        overflow: hidden;
-        background-color: #ffffff;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        transition: max-height 0.5s ease, border 0.5s ease;
-        border: 0 solid #ccc;
-      }
-
-      .toggleBox p {
-        margin: 20px;
-      }
-
-      .toggleBox.open {
-        border: 1px solid #ccc;
-      }
-
+toggle-item.open .toggleBox {
+  border: 1px solid #ccc;
+}
 
 .item {
   position: relative;
