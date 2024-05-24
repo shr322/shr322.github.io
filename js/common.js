@@ -7,7 +7,6 @@ window.addEventListener("load", function () {
     // document.querySelector(".main").style.height = screen.height + "px";
     // document.querySelector('.user_name').innerHTML = paramValue;
 
-    document.addEventListener("DOMContentLoaded", () => {
       const toggleButtons = document.querySelectorAll(".toggleButton");
       const toggleBoxes = document.querySelectorAll(".toggleBox");
       const toggleItems = document.querySelectorAll(".toggle-item");
@@ -25,7 +24,6 @@ window.addEventListener("load", function () {
           }
         });
       });
-    });
   }
 
   // 타겟 날짜 설정 (2024년 8월 10일 14시 30분)
