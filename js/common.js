@@ -7,30 +7,46 @@ window.addEventListener("load", function () {
     // document.querySelector(".main").style.height = screen.height + "px";
     // document.querySelector('.user_name').innerHTML = paramValue;
 
-    var toggleButtons = document.querySelectorAll(".toggleButton");
+    // var toggleButtons = document.querySelectorAll(".toggleButton");
 
-    toggleButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
-        var targetId = this.getAttribute("data-target");
-        var toggleBox = document.getElementById(targetId);
-        var toggleWrap = button.parentElement;
+    // toggleButtons.forEach(function (button) {
+    //   button.addEventListener("click", function () {
+    //     var targetId = this.getAttribute("data-target");
+    //     var toggleBox = document.getElementById(targetId);
+    //     var toggleWrap = button.parentElement;
   
-        toggleWrap.classList.toggle("hidden");
-        if (toggleWrap.classList.contains("hidden")) {
-          toggleBox.style.maxHeight = "0";
-        } else {
-          var contentHeight =
-            toggleBox.querySelector(".boxContent").clientHeight;
-          toggleBox.style.maxHeight = contentHeight + "px";
-        }
-      });
+    //     toggleWrap.classList.toggle("hidden");
+    //     if (toggleWrap.classList.contains("hidden")) {
+    //       toggleBox.style.maxHeight = "0";
+    //     } else {
+    //       var contentHeight =
+    //         toggleBox.querySelector(".boxContent").clientHeight;
+    //       toggleBox.style.maxHeight = contentHeight + "px";
+    //     }
+    //   });
 
-      // 초기 높이 설정
-      var targetId = button.getAttribute("data-target");
-      var toggleBox = document.getElementById(targetId);
-      var contentHeight = toggleBox.querySelector(".boxContent").clientHeight;
-      toggleBox.style.maxHeight = "0";
-    });
+    //   // 초기 높이 설정
+    //   var targetId = button.getAttribute("data-target");
+    //   var toggleBox = document.getElementById(targetId);
+    //   var contentHeight = toggleBox.querySelector(".boxContent").clientHeight;
+    //   toggleBox.style.maxHeight = "0";
+    // });
+
+    const toggleButtons = document.querySelectorAll(".toggleButton");
+        const toggleBoxes = document.querySelectorAll(".toggleBox");
+
+        toggleButtons.forEach((button, index) => {
+          button.addEventListener("click", () => {
+            const toggleBox = toggleBoxes[index];
+            if (toggleBox.style.maxHeight) {
+              toggleBox.style.maxHeight = null;
+              toggleBox.classList.remove("open");
+            } else {
+              toggleBox.style.maxHeight = toggleBox.scrollHeight + "px";
+              toggleBox.classList.add("open");
+            }
+          });
+        });
   }
 
   // 타겟 날짜 설정 (2024년 8월 10일 14시 30분)
