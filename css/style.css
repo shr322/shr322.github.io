@@ -142,7 +142,7 @@ img {
   padding: 20px 20px 0px;
 }
 
-.toggle-box-wrap {
+/* .toggle-box-wrap {
   margin-top: 50px;
 }
 .toggleButton {
@@ -181,7 +181,32 @@ img {
 .toggle-box.hidden .toggle-item {
   max-height: 0;
   border: 0;
-}
+} */
+
+.toggleButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px 0;
+      }
+
+      .toggleBox {
+        width: 300px;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: max-height 0.5s ease, border 0.5s ease;
+        border: 0 solid #ccc;
+      }
+
+      .toggleBox p {
+        margin: 20px;
+      }
+
+      .toggleBox.open {
+        border: 1px solid #ccc;
+      }
 
 
 .item {
