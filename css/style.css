@@ -58,15 +58,12 @@ img {
 .bg-text-tit {
   font-size: 18px;
   line-height: 30px;
-  font-weight: 700;
 }
 
 .bg-text-date {
   margin-top: 16px;
   font-size: 15px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
+  font-weight: 300;
   letter-spacing: 0.75px;
 }
 
@@ -326,7 +323,7 @@ swiper-container {
   background: white;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  width: 350px;
+  width: 100%;
 }
 
 .month {
