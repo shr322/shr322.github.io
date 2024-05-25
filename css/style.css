@@ -140,7 +140,8 @@ img {
   max-width: var(--max-width);
   width: 100%;
   margin-top: 400px;
-  background-color: #f6efe6;
+  background: url(/img/paper.jpg);
+  background-size: contain;
   z-index: 2;
 }
 
