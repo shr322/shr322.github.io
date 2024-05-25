@@ -267,9 +267,8 @@
           </div>
         </div>
         <div class="btnLoca">
-          <a href="#;" class="no1" onclick="fnCallWeb2App('kakaoNavi')"><span>카카오내비</span></a>
-          <a href="#;" class="no2" onclick="fnCallWeb2App('tmap')"><span>티맵</span></a>
-          <a href="#;" class="no3" onclick="fnCallWeb2App('naverMap')"><span>네이버지도</span></a>
+          <a href="https://map.naver.com/p/directions/-/14141203.28861044,4512529.542623611,%EC%82%BC%EC%9B%90%EA%B0%80%EB%93%A0,,/-/transit?c=15.00,0,0,0,dh" class="no1"><span>네이버 </span></a>
+          <a href="https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=%2C%2C507202%2C1118178&rt1=&rt2=%EC%82%BC%EC%9B%90%EA%B0%80%EB%93%A0&rtIds=%2C&rtTypes=%2C" class="no1"><span>네이버 </span></a>
       </div>
         <!-- //지도 -->
 
@@ -326,56 +325,6 @@
     <script src="js/heart.js" type="module"></script>
     <script src="js/common.js"></script>
 
-    <script>
-      function fnCallWeb2App(type) {
-          event.preventDefault();
-          var scheme, package, fallbackUrl, fail, useUrlScheme;
-          
-          switch(type) {
-              case 'kakaoNavi':
-                  alert('앱이 설치되어 있지 않은 경우\n길 안내가 실행되지 않을 수 있습니다');
-                  /*window.open('https://map.kakao.com/link/to/서울 신라호텔,37.5575055053737,127.007952910656','kakaomap','');*/
-                  Kakao.Navi.share({
-                      name: '서울신라호텔',
-                      x: 127.007952910656,
-                      y: 37.5575055053737,
-                      coordType: 'wgs84'
-                  });
-                  break;
-              case 'tmap':
-                  alert('앱이 설치되어 있지 않은 경우\n길 안내가 실행되지 않을 수 있습니다');
-                  scheme = 'tmap://route?goalx=127.007952910656&goaly=37.5575055053737&goalname=서울 신라호텔';
-                  package = 'com.skt.tmap.ku';
-                  fallbackUrl = scheme;
-                  break;
-              case 'naverMap':
-                  alert('앱이 설치되어 있지 않은 경우\n길 안내가 실행되지 않을 수 있습니다');
-                  scheme = 'navermaps://?menu=location&pinType=place&lat=37.5575055053737&lng=127.007952910656&title=서울 신라호텔';
-                  package = 'com.nhn.android.nmap';
-                  //useUrlScheme = true;
-                  fallbackUrl = 'http://map.naver.com/index.nhn?elng=127.007952910656&elat=37.5575055053737&etext=서울 신라호텔&menu=route&pathType=0';
-                  fail = function() {
-                      $('#fakeAnchor').remove();
-                      $('body').append("<a href='http://map.naver.com/index.nhn?elng=127.007952910656&elat=37.5575055053737&etext=서울 신라호텔&menu=route&pathType=0' id='fakeAnchor'></a>");
-                      $('#fakeAnchor').get(0).click();
-                  }
-                  break;
-              case 'kakaoCalandar':
-                  
-                  break;
-          }
-          
-          const callWeb2App = new CallWeb2App({
-              scheme: scheme,
-              package: package,
-              useUrlScheme: useUrlScheme,
-              fallbackUrl: fallbackUrl,
-              fail: fail
-          });
-          
-          callWeb2App.run();
-      }
-      </script>
   </body>
 </html>
 
