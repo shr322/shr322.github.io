@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
@@ -36,27 +40,12 @@
 
       <div class="content">
         <!-- 상단메인 -->
-        <div class="item main">
-          <img src="img/3.jpg" alt="" />
+        <div class="main">
+          <img src="1.png" alt="" />
+          <img src="2.png" alt="" />
+          <img src="3.png" alt="" />
         </div>
         <!-- 상단메인 -->
-
-
-
-<div class="toggle-wrap">
-  <div class="toggle-item">
-    <button class="toggleButton">Toggle Box 1</button>
-    <div class="toggleBox">
-      <p>This is the first sliding box. Click the button to toggle.</p>
-    </div>
-  </div>
-  <div class="toggle-item">
-    <button class="toggleButton">Toggle Box 2</button>
-    <div class="toggleBox">
-      <p>This is the second sliding box. Click the button to toggle.</p>
-    </div>
-  </div>
-</div>
 
         <div class="item section2 scroll-element">
           <p>축복해 주세요.</p>
@@ -65,26 +54,122 @@
           <p>심원구 &middot; 김인숙 의 장남 <span class="fw-500">형래</span></p>
           <p>김현돈 &middot; 이영란 의 장녀 <span class="fw-500">수지</span></p>
         </div>
+        <div class="item section3 scroll-element">
+          <div class="calendar">
+            <div class="month">
+              <h2>May 2024</h2>
+            </div>
+            <div class="weekdays">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="days">
+              <div class="prev-date">28</div>
+              <div class="prev-date">29</div>
+              <div class="prev-date">30</div>
+              <div class="prev-date">31</div>
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+              <div>21</div>
+              <div>22</div>
+              <div>23</div>
+              <div>24</div>
+              <div>25</div>
+              <div>26</div>
+              <div>27</div>
+              <div>28</div>
+              <div>29</div>
+              <div>30</div>
+              <div>31</div>
+              <div class="next-date">1</div>
+              <div class="next-date">2</div>
+              <div class="next-date">3</div>
+              <div class="next-date">4</div>
+              <div class="next-date">5</div>
+            </div>
+          </div>
+        </div>
 
-        <!-- 갤러리 -->
-        <div class="gallery-box">
-          <div class="gallery scroll-element">
+        <!-- 갤러리1 -->
+        <div class="gallery-box scroll-element item">
+          <div class="gallery">
             <swiper-container
               style="
                 --swiper-navigation-color: #fff;
                 --swiper-pagination-color: #fff;
               "
               class="mySwiper"
-              thumbs-swiper=".mySwiper2"
+              thumbs-swiper=".mySwiper-thum1"
               loop="true"
               space-between="10"
               navigation="true"
             >
               <swiper-slide>
-                <img src="img/1.jpg" />
+                <img src="img/2.jpg" />
               </swiper-slide>
               <swiper-slide>
+                <img src="img/5.jpg" />
+              </swiper-slide>
+            </swiper-container>
+
+            <swiper-container
+              class="mySwiper-thum mySwiper-thum1"
+              loop="true"
+              space-between="10"
+              slides-per-view="4"
+              free-mode="true"
+              watch-slides-progress="true"
+            >
+              <swiper-slide>
                 <img src="img/2.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/5.jpg" />
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+        <!-- //갤러리1 -->
+
+        <!-- 갤러리2 -->
+        <div class="gallery-box scroll-element item">
+          <div class="gallery">
+            <swiper-container
+              style="
+                --swiper-navigation-color: #fff;
+                --swiper-pagination-color: #fff;
+              "
+              class="mySwiper"
+              thumbs-swiper=".mySwiper-thum2"
+              loop="true"
+              space-between="10"
+              navigation="true"
+            >
+              <swiper-slide>
+                <img src="img/6.jpg" />
               </swiper-slide>
               <swiper-slide>
                 <img src="img/3.jpg" />
@@ -92,16 +177,51 @@
               <swiper-slide>
                 <img src="img/4.jpg" />
               </swiper-slide>
-              <swiper-slide>
-                <img src="img/5.jpg" />
-              </swiper-slide>
+            </swiper-container>
+
+            <swiper-container
+              class="mySwiper-thum mySwiper-thum2"
+              loop="true"
+              space-between="10"
+              slides-per-view="4"
+              free-mode="true"
+              watch-slides-progress="true"
+            >
               <swiper-slide>
                 <img src="img/6.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/3.jpg" />
+              </swiper-slide>
+              <swiper-slide>
+                <img src="img/4.jpg" />
+              </swiper-slide>
+            </swiper-container>
+          </div>
+        </div>
+        <!-- //갤러리2 -->
+
+        <!-- 갤러리3 -->
+        <div class="gallery-box scroll-element item">
+          <div class="gallery">
+            <swiper-container
+              style="
+                --swiper-navigation-color: #fff;
+                --swiper-pagination-color: #fff;
+              "
+              class="mySwiper"
+              thumbs-swiper=".mySwiper-thum3"
+              loop="true"
+              space-between="10"
+              navigation="true"
+            >
+              <swiper-slide>
+                <img src="img/1.jpg" />
               </swiper-slide>
             </swiper-container>
 
             <swiper-container
-              class="mySwiper2"
+              class="mySwiper-thum mySwiper-thum3"
               loop="true"
               space-between="10"
               slides-per-view="4"
@@ -111,25 +231,10 @@
               <swiper-slide>
                 <img src="img/1.jpg" />
               </swiper-slide>
-              <swiper-slide>
-                <img src="img/2.jpg" />
-              </swiper-slide>
-              <swiper-slide>
-                <img src="img/3.jpg" />
-              </swiper-slide>
-              <swiper-slide>
-                <img src="img/4.jpg" />
-              </swiper-slide>
-              <swiper-slide>
-                <img src="img/5.jpg" />
-              </swiper-slide>
-              <swiper-slide>
-                <img src="img/6.jpg" />
-              </swiper-slide>
             </swiper-container>
           </div>
         </div>
-        <!-- //갤러리 -->
+        <!-- //갤러리3 -->
 
         <!-- 지도 -->
         <div class="item scroll-element">
@@ -148,6 +253,31 @@
           </div>
         </div>
         <!-- //지도 -->
+
+        <!-- 토글 -->
+        <div class="item scroll-element">
+          <div class="toggle-wrap">
+            <div class="toggle-item">
+              <button class="toggleButton">Toggle Box 1</button>
+              <div class="toggleBox">
+                <p>110464249470</p>
+                <button onclick="copyToClipboard('110464249470')">
+                  첫 번째 텍스트 복사하기
+                </button>
+              </div>
+            </div>
+            <div class="toggle-item">
+              <button class="toggleButton">Toggle Box 2</button>
+              <div class="toggleBox">
+                <p>두 번째 텍스트입니다.</p>
+                <button onclick="copyToClipboard('복사2')">
+                  첫 번째 텍스트 복사하기
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //토글 -->
 
         <div class="item scroll-element">
           <!-- 하트 카운트 -->

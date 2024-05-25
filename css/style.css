@@ -2,7 +2,10 @@
   --max-width: 400px;
 }
 
+.fw-300 {font-weight: 300 !important;}
+.fw-400 {font-weight: 400 !important;}
 .fw-500 {font-weight: 500 !important;}
+.fw-700 {font-weight: 700 !important;}
 
 * {
   box-sizing: border-box;
@@ -13,6 +16,10 @@
 body,html {
   max-width: 100vw;
   min-width: 375px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Noto Serif KR", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 body {
@@ -137,10 +144,10 @@ img {
   max-width: var(--max-width);
   width: 100%;
   margin-top: 400px;
-  background-color: rgb(254, 253, 250);
+  background-color: #f6efe6;
   z-index: 2;
-  padding: 20px 20px 0px;
 }
+
 .toggle-item {
   margin-top: 30px;
   border: 1px solid #ccc;
@@ -173,6 +180,8 @@ img {
   width: 100%;
   height: 100%;
   margin-top: 50px;
+  padding: 0 15px;
+
 }
 
 .item:first-child {margin-top: 0;}
@@ -253,11 +262,12 @@ canvas {
 
 /* gallery */
 .gallery-box {
-  padding: 20px;
-  background: #f2eadf;
+  
 }
 .gallery {
   height: auto;
+  padding: 15px 15px;
+  background: #fff;
 }
 
 html,
@@ -295,18 +305,77 @@ swiper-container {
   width: 100%;
 }
 
-.mySwiper2 {
+.mySwiper-thum {
   height: 20%;
   box-sizing: border-box;
-  padding: 10px 0;
+  padding: 10px 0 0;
 }
 
-.mySwiper2 swiper-slide {
+.mySwiper-thum swiper-slide {
   width: 25%;
   height: 100%;
   opacity: 0.4;
 }
 
-.mySwiper2 .swiper-slide-thumb-active {
+.mySwiper-thum .swiper-slide-thumb-active {
   opacity: 1;
+}
+
+
+.calendar {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 350px;
+}
+
+.month {
+text-align: center;
+  padding: 20px;
+  background: #0d6efd;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.month button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.month h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.weekdays, .days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.weekdays div, .days div {
+  width: calc(100% / 7);
+  text-align: center;
+  padding: 10px;
+}
+
+.weekdays {
+  background: #0d6efd;
+  color: white;
+}
+
+.days div {
+  cursor: pointer;
+}
+
+.prev-date, .next-date {
+  color: #c0c0c0;
+}
+
+.days div:hover {
+  background: #f0f0f0;
+  border-radius: 50%;
 }
