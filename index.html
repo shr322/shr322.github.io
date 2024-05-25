@@ -50,22 +50,29 @@
           <p>축복해 주세요.</p>
         </div>
         <div class="item section3 scroll-element">
-          <p>심원구 &middot; 김인숙 의 장남 <span class="fw-500">형래</span></p>
-          <p>김현돈 &middot; 이영란 의 장녀 <span class="fw-500">수지</span></p>
+          <p>
+            심원구 &middot; 김인숙 의 <span>아들</span>
+            <span class="fw-700">형래</span>
+          </p>
+          <p style="gap: 15px">
+            김현돈 &middot; 이영란 의 <span>딸</span>
+            <span class="fw-700">수지</span>
+          </p>
         </div>
-        <div class="item section3 scroll-element">
+        <!-- 달력 -->
+        <div class="item scroll-element">
           <div class="calendar">
             <div class="month">
-              <h2>May 2024</h2>
+              <h2>2024년 08월</h2>
             </div>
             <div class="weekdays">
-              <div>Sun</div>
-              <div>Mon</div>
-              <div>Tue</div>
-              <div>Wed</div>
-              <div>Thu</div>
-              <div>Fri</div>
-              <div>Sat</div>
+              <div>일</div>
+              <div>월</div>
+              <div>화</div>
+              <div>수</div>
+              <div>목</div>
+              <div>금</div>
+              <div>토</div>
             </div>
             <div class="days">
               <div class="prev-date">28</div>
@@ -74,35 +81,35 @@
               <div class="prev-date">31</div>
               <div>1</div>
               <div>2</div>
-              <div>3</div>
-              <div>4</div>
+              <div class="sat">3</div>
+              <div class="sun">4</div>
               <div>5</div>
               <div>6</div>
               <div>7</div>
               <div>8</div>
               <div>9</div>
-              <div>10</div>
-              <div>11</div>
+              <div class="active">10</div>
+              <div class="sun">11</div>
               <div>12</div>
               <div>13</div>
               <div>14</div>
               <div>15</div>
               <div>16</div>
-              <div>17</div>
-              <div>18</div>
+              <div class="sat">17</div>
+              <div class="sun">18</div>
               <div>19</div>
               <div>20</div>
               <div>21</div>
               <div>22</div>
               <div>23</div>
-              <div>24</div>
-              <div>25</div>
+              <div class="sat">24</div>
+              <div class="sun">25</div>
               <div>26</div>
               <div>27</div>
               <div>28</div>
               <div>29</div>
               <div>30</div>
-              <div>31</div>
+              <div class="sat">31</div>
               <div class="next-date">1</div>
               <div class="next-date">2</div>
               <div class="next-date">3</div>
@@ -111,11 +118,14 @@
             </div>
           </div>
         </div>
-        <!-- 디데이 -->
-        <div id="countdownTimer" class="scroll-element"></div>
-        <!-- //디데이 -->
+        <!-- //달력 -->
 
-        
+        <!-- 디데이 -->
+        <div id="countdownTimer" class="item count-down scroll-element">
+          <p>심형래❤️김수지 결혼까지</p>
+          <div class="count"></div>
+        </div>
+        <!-- //디데이 -->
 
         <!-- 갤러리1 -->
         <div class="gallery-box scroll-element item">
@@ -241,7 +251,7 @@
         <!-- //갤러리3 -->
 
         <!-- 지도 -->
-        <div class="item scroll-element">
+        <div class="section4 scroll-element">
           <div class="map">
             <h1>오시는 길</h1>
             <div id="map" style="width: 100%; height: 300px"></div>
@@ -256,6 +266,11 @@
             <a href="tel:02-432-9000" class="call_btn">전화</a>
           </div>
         </div>
+        <div class="btnLoca">
+          <a href="#;" class="no1" onclick="fnCallWeb2App('kakaoNavi')"><span>카카오내비</span></a>
+          <a href="#;" class="no2" onclick="fnCallWeb2App('tmap')"><span>티맵</span></a>
+          <a href="#;" class="no3" onclick="fnCallWeb2App('naverMap')"><span>네이버지도</span></a>
+      </div>
         <!-- //지도 -->
 
         <!-- 토글 -->
@@ -283,8 +298,6 @@
         </div>
         <!-- //토글 -->
 
-       
-
         <button id="add-schedule-btn">카카오톡 공유하기</button>
 
         <div class="item scroll-element">
@@ -295,7 +308,6 @@
           <canvas id="canvas1"></canvas>
           <!-- //하트 카운트 -->
         </div>
-        
       </div>
 
       <div class="dim" style="bottom: 0">
@@ -313,5 +325,58 @@
     <script src="js/confetti.browser.min.js"></script>
     <script src="js/heart.js" type="module"></script>
     <script src="js/common.js"></script>
+
+    <script>
+      function fnCallWeb2App(type) {
+          event.preventDefault();
+          var scheme, package, fallbackUrl, fail, useUrlScheme;
+          
+          switch(type) {
+              case 'kakaoNavi':
+                  alert('앱이 설치되어 있지 않은 경우\n길 안내가 실행되지 않을 수 있습니다');
+                  /*window.open('https://map.kakao.com/link/to/서울 신라호텔,37.5575055053737,127.007952910656','kakaomap','');*/
+                  Kakao.Navi.share({
+                      name: '서울신라호텔',
+                      x: 127.007952910656,
+                      y: 37.5575055053737,
+                      coordType: 'wgs84'
+                  });
+                  break;
+              case 'tmap':
+                  alert('앱이 설치되어 있지 않은 경우\n길 안내가 실행되지 않을 수 있습니다');
+                  scheme = 'tmap://route?goalx=127.007952910656&goaly=37.5575055053737&goalname=서울 신라호텔';
+                  package = 'com.skt.tmap.ku';
+                  fallbackUrl = scheme;
+                  break;
+              case 'naverMap':
+                  alert('앱이 설치되어 있지 않은 경우\n길 안내가 실행되지 않을 수 있습니다');
+                  scheme = 'navermaps://?menu=location&pinType=place&lat=37.5575055053737&lng=127.007952910656&title=서울 신라호텔';
+                  package = 'com.nhn.android.nmap';
+                  //useUrlScheme = true;
+                  fallbackUrl = 'http://map.naver.com/index.nhn?elng=127.007952910656&elat=37.5575055053737&etext=서울 신라호텔&menu=route&pathType=0';
+                  fail = function() {
+                      $('#fakeAnchor').remove();
+                      $('body').append("<a href='http://map.naver.com/index.nhn?elng=127.007952910656&elat=37.5575055053737&etext=서울 신라호텔&menu=route&pathType=0' id='fakeAnchor'></a>");
+                      $('#fakeAnchor').get(0).click();
+                  }
+                  break;
+              case 'kakaoCalandar':
+                  
+                  break;
+          }
+          
+          const callWeb2App = new CallWeb2App({
+              scheme: scheme,
+              package: package,
+              useUrlScheme: useUrlScheme,
+              fallbackUrl: fallbackUrl,
+              fail: fail
+          });
+          
+          callWeb2App.run();
+      }
+      </script>
   </body>
 </html>
+
+

@@ -7,28 +7,28 @@ window.addEventListener("load", function () {
     // document.querySelector(".main").style.height = screen.height + "px";
     // document.querySelector('.user_name').innerHTML = paramValue;
 
-      const toggleButtons = document.querySelectorAll(".toggleButton");
-      const toggleBoxes = document.querySelectorAll(".toggleBox");
-      const toggleItems = document.querySelectorAll(".toggle-item");
-    
-      toggleButtons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-          const toggleBox = toggleBoxes[index];
-          const toggleItem = toggleItems[index];
-          if (toggleBox.style.maxHeight) {
-            toggleBox.style.maxHeight = null;
-            toggleItem.classList.remove("open");
-          } else {
-            toggleBox.style.maxHeight = toggleBox.scrollHeight + "px";
-            toggleItem.classList.add("open");
-          }
-        });
+    const toggleButtons = document.querySelectorAll(".toggleButton");
+    const toggleBoxes = document.querySelectorAll(".toggleBox");
+    const toggleItems = document.querySelectorAll(".toggle-item");
+
+    toggleButtons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        const toggleBox = toggleBoxes[index];
+        const toggleItem = toggleItems[index];
+        if (toggleBox.style.maxHeight) {
+          toggleBox.style.maxHeight = null;
+          toggleItem.classList.remove("open");
+        } else {
+          toggleBox.style.maxHeight = toggleBox.scrollHeight + "px";
+          toggleItem.classList.add("open");
+        }
       });
+    });
   }
 
   // 타겟 날짜 설정 (2024년 8월 10일 14시 30분)
   let targetDate = new Date(2024, 07, 10, 14, 30, 00); // 월은 0부터 시작합니다 (8월은 7)
-  let display = document.querySelector("#countdownTimer");
+  let display = document.querySelector("#countdownTimer .count");
   startCountdown(targetDate, display);
 });
 
@@ -141,11 +141,10 @@ function startCountdown(targetDate, display) {
         pad(days) +
         "일 " +
         pad(hours) +
-        "시간 " +
+        " : " +
         pad(minutes) +
-        "분 " +
-        pad(seconds) +
-        "초 ";
+        " : " +
+        pad(seconds)
     }
   }, 1000);
 }
