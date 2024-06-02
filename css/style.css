@@ -60,7 +60,8 @@ img {
   width: 100%;
 }
 
-button, a {
+button,
+a {
   color: #000;
 }
 
@@ -131,9 +132,19 @@ button, a {
   line-height: 30px;
 }
 
-.bg-text-tit span:nth-child(1) {display: block; color: var(--color-red2);}
-.bg-text-tit span:nth-child(2) {font-size: 30px; font-weight: 500;}
-.bg-text-tit span:nth-child(3) {font-size: 30px; font-weight: 500;}
+.bg-text-tit span:nth-child(1) {
+  display: block;
+  color: var(--color-red2);
+}
+.bg-text-tit span:nth-child(2) {
+  font-size: 30px;
+  font-weight: 500;
+}
+.bg-text-tit span:nth-child(3) {
+  font-size: 30px;
+  font-weight: 500;
+  margin-left: 20px;
+}
 
 .bg-text-date {
   margin-top: 16px;
@@ -247,10 +258,10 @@ button, a {
 }
 
 .toggle-item:nth-child(1) .toggleButton {
-  background: #fff;
+  background: #52754e30;
 }
 .toggle-item:nth-child(2) .toggleButton {
-  background: #fff;
+  background: #ec9f0633;
 }
 
 .toggleBox {
@@ -305,7 +316,6 @@ button, a {
 
 .section2,
 .section3 {
-  font-size: 18px;
   font-weight: 400;
   line-height: 32px;
   text-align: center;
@@ -328,7 +338,7 @@ button, a {
 }
 
 .section4 #map {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .dim {
@@ -508,6 +518,7 @@ swiper-container {
 }
 
 .weekdays div {
+  font-weight: 500;
   color: var(--color-red2);
 }
 .days div {
@@ -541,7 +552,7 @@ swiper-container {
 
 .prev-date,
 .next-date {
-  color: #c0c0c0;
+  opacity: 0.3;
 }
 
 .count-down {
@@ -600,18 +611,31 @@ swiper-container {
 .heart-wrap {
   text-align: center;
 }
-#heartCount{
+#heartCount {
   font-size: 20px;
 }
 .heart {
   display: block;
 }
-#heartButton {width: 80px; height: auto; border: 0; background: transparent;}
-#heartButton .heart .heart-icon {display: block;}
-#heartButton .heart .heart-icon.active {display: none;}
+#heartButton {
+  width: 80px;
+  height: auto;
+  border: 0;
+  background: transparent;
+}
+#heartButton .heart .heart-icon {
+  display: block;
+}
+#heartButton .heart .heart-icon.active {
+  display: none;
+}
 
-#heartButton:hover .heart .heart-icon {display: none;}
-#heartButton:hover .heart .heart-icon.active {display: block;}
+#heartButton:hover .heart .heart-icon {
+  display: none;
+}
+#heartButton:hover .heart .heart-icon.active {
+  display: block;
+}
 
 /* 탭 */
 .swiper-container-tabs {
@@ -674,7 +698,7 @@ swiper-container {
 
 .region {
   text-align: center;
-  background: #ecab4417;
+  background: #ec9f0633;
   padding: 20px 0;
 }
 
@@ -756,7 +780,7 @@ swiper-container {
   font-size: 14px;
   margin-top: 15px;
   line-height: 24px;
-  color: var(--color-red2);
+  color: #666;
 }
 
 .swiper-container-tabs .swiper-slide {
