@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
   </head>
   <body>
-    <div id="wrap" class="wrap ">
+    <div id="wrap" class="wrap">
       <div class="bg">
         <!-- <img src="123123.png" alt="" /> -->
         <img src="img/letter_back.png" alt="" />
@@ -43,18 +43,33 @@
         <!-- 상단메인 -->
         <div class="main">
           <img src="img/cont_img01.png" alt="" />
+
+          <div class="main-text">
+            <p class="main-tit">신랑 심형래 , 신부 김수지</p>
+            <div class="main-flex">
+              <p class="red">heoung<br />rae</p>
+              <p>X</p>
+              <p class="red">su<br />ji</p>
+            </div>
+          </div>
+
+          <div class="main-sub">
+            [THE STORY WITHOUT AN END] 의 시작<br />우리 이야기의 첫 페이지를
+            함께 채워주시길 바랍니다.
+          </div>
         </div>
         <!-- 상단메인 -->
 
-        <div class="item section2 scroll-element">
+        <!-- <div class="item section2 scroll-element">
           <img src="img/cont_img02.png" alt="" />
-          <p>저희 두 사람이<br>
-            이제 믿음과 사랑으로<br>
-            한 가정을 이루게 되었습니다.<br>
-            부디 함께 하시어 축복해 주시기 바랍니다.</p>
-        </div>
+        </div> -->
         <div class="item section3 scroll-element">
-          <p>
+          <div class="person-img">
+            <i class="shr-face"></i>
+            <i class="ksj-face"></i>
+          </div>
+
+          <p class="mgt20">
             심원구 &middot; 김인숙 의 <span>아들</span>
             <span class="fw-700">형래</span>
           </p>
@@ -64,11 +79,12 @@
           </p>
         </div>
         <!-- 달력 -->
-        <div class="item scroll-element">
+        <div class="item scroll-element" id="target1">
+          <strong class="title">- wedding day -</strong>
+          <div class="sub-title">
+            2024년 08월 토요일,<br />오후 2시 30분 예식이 시작됩니다.
+          </div>
           <div class="calendar">
-            <div class="month">
-              <h2>2024년 08월</h2>
-            </div>
             <div class="weekdays">
               <div>일</div>
               <div>월</div>
@@ -124,15 +140,16 @@
         </div>
         <!-- //달력 -->
 
-        <!-- 디데이 -->
-        <div id="countdownTimer" class="item count-down scroll-element">
-          <p>심형래❤️김수지 결혼까지</p>
-          <div class="count"></div>
+        <div class="item scroll-element">
+          <div class="region">
+            <p class="region-one">2024년 8월 10일 토요일, 오후 2시 30분</p>
+            <p class="region-two">(위치) 더채플앳청담 6층 채플홀</p>
+          </div>
         </div>
-        <!-- //디데이 -->
 
         <!-- 갤러리1 -->
-        <div class="gallery-box scroll-element item">
+        <div id="target3" class="gallery-box scroll-element item">
+          <strong class="title">- gallery -</strong>
           <div class="gallery">
             <swiper-container
               style="
@@ -326,49 +343,77 @@
         </div>
         <!-- //갤러리3 -->
 
-        <div class="item">
+        <!-- 디데이 -->
+        <div id="countdownTimer" class="item count-down scroll-element">
+          <strong class="title">- d-day count -</strong>
+          <p>심형래❤️김수지 결혼까지</p>
+          <div class="count"></div>
+        </div>
+        <!-- //디데이 -->
+
+        <!-- 탭 -->
+        <div class="item scroll-element">
+          <strong class="title">- information -</strong>
+          <p class="sub-title">장소, 식사 그리고 주차<br />정보를 안내합니다</p>
           <div class="tabs">
-            <div class="tab active" data-index="0">Tab 1</div>
-            <div class="tab" data-index="1">Tab 2</div>
-            <div class="tab" data-index="2">Tab 3</div>
+            <div class="tab active" data-index="0">장 소</div>
+            <div class="tab" data-index="1">식 사</div>
+            <div class="tab" data-index="2">주 차</div>
+            <div class="active-bar"></div>
           </div>
           <div class="swiper-container-tabs">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">Content 1</div>
-              <div class="swiper-slide">Content 2</div>
-              <div class="swiper-slide">Content 3</div>
+              <div class="swiper-slide">
+                <i class="info-img"></i>
+                <div class="info-text">
+                  <p class="info-text01">VENUE - 장소안내</p>
+                  <p class="info-text02">
+                    6F, CHAPEL HALL<br />
+                    국내 최고 높이의 12M 아치형 천고와 행복을 기원하는 조형
+                    작품들, 아름다운 연못과 정원, 조경수가 색다른 여유를
+                    선사합니다. 이채로운 풀 가든까지 갖춘 채플 홀에서 저희 두
+                    사람의 웨딩이 진행됩니다.
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <i class="info-img"></i>
+                <div class="info-text">
+                  <p class="info-text01">DINING - 식사 안내</p>
+                  <p class="info-text02">
+                    SF, BANQUET HALL<br />
+                    파인다이닝 스타 셰프들의 메뉴들이 뷔페식으로 제공됩니다.
+                    엄선한 제철 재료로 한식, 중식, 양식, 일식을 넘나드는
+                    조화로운 메뉴가 준비 되어 있습니다. 웨딩과 함께 더채플이
+                    전하는 미식의 감동을 즐겨주세요.
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <i class="info-img"></i>
+                <div class="info-text">
+                  <p class="info-text01">PARKING - 주차 안내</p>
+                  <p class="info-text02">
+                    내부&amp;외부 주차장<br />
+                    예식장 내부 주차장에 200대와 강남구청역 근처 외부 주차장에
+                    300대 무료 주차 가능합니다. (내부 주차장 90분 / 외부 주차장
+                    별도 쿠폰 제공)
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- 지도 -->
-        <div class="item section4 scroll-element">
-          <div class="map">
-            <h1>오시는 길</h1>
-            <div id="map" style="width: 100%; height: 300px"></div>
-            <code id="snippet" class="snippet"></code>
-          </div>
-          <div class="location_button_box">
-            <a
-              href="https://m.map.naver.com/map.naver?lat=37.5222098&amp;lng=127.038892&amp;dlevel=20&amp;mapMode=&amp;pinTitle=더채플앳청담&amp;boundary=&amp;traffic="
-              target="_blank"
-              >네이버지도에서 보기</a
-            >
-            <a
-              href="https://map.kakao.com/?urlX=508623&urlY=1117428&urlLevel=3&itemId=23182563&q=%EB%8D%94%EC%B1%84%ED%94%8C%EC%95%B3%EC%B2%AD%EB%8B%B4&srcid=23182563&map_type=TYPE_MAP"
-              target="_blank"
-              >카카오맵으로 보기</a
-            >
-          </div>
-        </div>
-        <!-- //지도 -->
+        <!-- //탭 -->
 
         <!-- 토글 -->
         <div class="item scroll-element">
+          <strong class="title">- for your heart -</strong>
+          <div class="sub-title">마음 전하실 곳</div>
           <div class="toggle-wrap">
             <div class="toggle-item">
               <button class="toggleButton">
-                <span>형래 측</span>
+                <span>신랑 측</span>
                 <svg
                   class="toggle-arrow"
                   xmlns="http://www.w3.org/2000/svg"
@@ -397,7 +442,9 @@
                     </div>
                   </li>
                   <li>
-                    <p><span>아빠 </span><span class="fw-700">심원구</span></p>
+                    <p>
+                      <span>아버지 </span><span class="fw-700">심원구</span>
+                    </p>
                     <div class="copy-box">
                       <p>신한은행 110-464-249470</p>
                       <button onclick="copyToClipboard('110464249470')">
@@ -409,7 +456,9 @@
                     </div>
                   </li>
                   <li>
-                    <p><span>엄마 </span><span class="fw-700">김인숙</span></p>
+                    <p>
+                      <span>어머니 </span><span class="fw-700">김인숙</span>
+                    </p>
                     <div class="copy-box">
                       <p>신한은행 110-464-249470</p>
                       <button onclick="copyToClipboard('110464249470')">
@@ -425,7 +474,7 @@
             </div>
             <div class="toggle-item">
               <button class="toggleButton">
-                <span>수지 측</span>
+                <span>신부 측</span>
                 <svg
                   class="toggle-arrow"
                   version="1.1"
@@ -446,8 +495,8 @@
                   <li>
                     <p><span>신부 </span><span class="fw-700">김수지</span></p>
                     <div class="copy-box">
-                      <p>신한은행 110-464-249470</p>
-                      <button onclick="copyToClipboard('110464249470')">
+                      <p>토스뱅크 1000-3445-3507</p>
+                      <button onclick="copyToClipboard('100034453507')">
                         <p>
                           <img src="img/copy.png" alt="" />
                           복사하기
@@ -456,10 +505,12 @@
                     </div>
                   </li>
                   <li>
-                    <p><span>아빠 </span><span class="fw-700">김현돈</span></p>
+                    <p>
+                      <span>아버지 </span><span class="fw-700">김현돈</span>
+                    </p>
                     <div class="copy-box">
-                      <p>신한은행 110-464-249470</p>
-                      <button onclick="copyToClipboard('110464249470')">
+                      <p>신한은행 110-201-242161</p>
+                      <button onclick="copyToClipboard('110201242161')">
                         <p>
                           <img src="img/copy.png" alt="" />
                           복사하기
@@ -468,10 +519,12 @@
                     </div>
                   </li>
                   <li>
-                    <p><span>엄마 </span><span class="fw-700">이영란</span></p>
+                    <p>
+                      <span>어머니 </span><span class="fw-700">이영란</span>
+                    </p>
                     <div class="copy-box">
-                      <p>신한은행 110-464-249470</p>
-                      <button onclick="copyToClipboard('110464249470')">
+                      <p>국민은행 200002-04-038454</p>
+                      <button onclick="copyToClipboard('20000204038454')">
                         <p>
                           <img src="img/copy.png" alt="" />
                           복사하기
@@ -485,6 +538,89 @@
           </div>
         </div>
         <!-- //토글 -->
+
+        <!-- 지도 -->
+        <div class="item section4 scroll-element" id="target2">
+          <div class="map">
+            <strong class="title">- location -</strong>
+            <div class="sub-title">찾아오시는 길을 안내합니다.</div>
+            <div id="map" style="width: 100%; height: 300px"></div>
+            <code id="snippet" class="snippet"></code>
+          </div>
+        </div>
+        <!-- //지도 -->
+
+        <!-- 안내 -->
+        <div class="scroll-element">
+          <div class="location_copy">
+            <p><span class="red2">(위치)</span> 서울 강남구 선릉로 757</p>
+            <p class="red2" onclick="copyToClipboard('서울 강남구 선릉로 757')">
+              복사
+            </p>
+          </div>
+
+          <div class="info_wrap">
+            <ul>
+              <li>
+                <p class="info_wrap_title">지도</p>
+                <p class="info_wrap_txt">
+                  원하는 지도을 선택하시면 화면이 열립니다.
+                </p>
+                <div class="location_button_box">
+                  <a
+                    href="https://m.map.naver.com/map.naver?lat=37.5222098&amp;lng=127.038892&amp;dlevel=20&amp;mapMode=&amp;pinTitle=더채플앳청담&amp;boundary=&amp;traffic="
+                    target="_blank"
+                    >네이버지도에서 보기</a
+                  >
+                  <a
+                    href="https://map.kakao.com/?urlX=508623&urlY=1117428&urlLevel=3&itemId=23182563&q=%EB%8D%94%EC%B1%84%ED%94%8C%EC%95%B3%EC%B2%AD%EB%8B%B4&srcid=23182563&map_type=TYPE_MAP"
+                    target="_blank"
+                    >카카오맵으로 보기</a
+                  >
+                </div>
+              </li>
+              <li>
+                <p class="info_wrap_title">주차안내</p>
+                <p class="info_wrap_txt">
+                  예식장 내부 주차장과 외부 주차장에 무료 주차 가능합니다.
+                  예식장 내부 주차장을 이용하신 분들은 별도의 주차권을 받을
+                  필요없이 90분 동안 무료로 이용하실 수 있습니다. 강남구청역
+                  근처 외부주차장을 이용하신 분들은 주차 쿠폰을 받으실 수
+                  있습니다.
+                </p>
+              </li>
+              <li>
+                <p class="info_wrap_title">버스</p>
+                <p class="info_wrap_txt">
+                  *영동고교 앞 정류장 하차<br />
+                  - 노선번호 : 301, 342, 472, 3011, 4312<br />
+                  - 도보 2분 거리
+                </p>
+              </li>
+              <li>
+                <p class="info_wrap_title">지하철</p>
+                <p class="info_wrap_txt">
+                  *지하철 7호선 강남구청역 / 지하철 수인분당선 강남구청역<br />
+                  - 3-1번 출구<br />
+                  - 도보 8분 거리 
+                  <br><br>
+                  *지하철 수인분당선 압구정로데오역<br />
+                  - 5번 출구<br />
+                  - 도보 9분 거리
+                </p>
+              </li>
+              <li>
+                <p class="info_wrap_title">셔틀버스</p>
+                <p class="info_wrap_txt">
+                  *강남구청역 3번 출구<br />
+                  - 10분 간격으로 운행 <br />
+                  - 운행노선 : 강남구청역(3번 출구)->더채플앳청담
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- //안내 -->
 
         <div class="item scroll-element heart-wrap">
           <!-- 하트 카운트 -->
@@ -505,13 +641,21 @@
           </button>
         </div>
 
-        <img src="img/letter_front.png" alt="" style="margin-bottom: -1px;"/>
+        <img src="img/letter_front.png" alt="" style="margin-bottom: -1px" />
       </div>
 
       <div class="dim" style="bottom: 0">
         <img src="img/letter_front.png" alt="" />
       </div>
+
+      <div class="fixed--bar">
+        <a class="scroll-to" href="#target1">달력</a>
+        <a class="scroll-to" href="#target2">위치</a>
+        <a class="scroll-to" href="#target3">사진</a>
+        <a class="scroll-to" onclick="Kakao.Link.sendCustom({ templateId: 108113 });">카카오톡공유하기</a>
+      </div>
     </div>
+
 
     <script src="js/swiper-element-bundle.min.tab.js"></script>
     <script src="js/swiper-element-bundle.min.js"></script>
@@ -530,13 +674,37 @@
         on: {
           slideChange: function () {
             updateTabs(swiperTab.activeIndex);
+            updateActiveBar();
           },
         },
       });
 
+      const tabs = document.querySelectorAll(".tab");
+      const contents = document.querySelectorAll(".swiper-slide");
+      const activeBar = document.querySelector(".active-bar");
+      function updateActiveBar() {
+        const activeTab = document.querySelector(".tab.active");
+        if (activeTab) {
+          const activeTabRect = activeTab.getBoundingClientRect();
+          const tabsRect = activeTab.parentElement.getBoundingClientRect();
+          activeBar.style.width = activeTabRect.width + "px";
+          activeBar.style.left = activeTabRect.left - tabsRect.left + "px";
+        }
+      }
+
       document.querySelectorAll(".tab").forEach((tab, index) => {
         tab.addEventListener("click", () => {
           swiperTab.slideTo(index);
+
+          tabs.forEach((t) => t.classList.remove("active"));
+          contents.forEach((content) => content.classList.remove("active"));
+
+          // Add active class to the clicked tab and corresponding content
+          tab.classList.add("active");
+          // document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+
+          // Update the active bar position
+          updateActiveBar();
         });
       });
 
@@ -549,6 +717,12 @@
           }
         });
       }
+
+      // Initial update of the active bar
+      updateActiveBar();
+
+      // Update the active bar on window resize
+      window.addEventListener("resize", updateActiveBar);
     </script>
   </body>
 </html>

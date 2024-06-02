@@ -3,7 +3,10 @@ window.addEventListener("load", function () {
     window.location.href =
       "https://m.map.naver.com/map.naver?lat=37.5222098&lng=127.038892&dlevel=20&mapMode=&pinTitle=더채플앳청담&boundary=&traffic=";
   } else {
-    document.querySelector(".wrap").classList.add("on");
+    setTimeout(() => {
+      document.querySelector(".wrap").classList.add("on");
+    }, 500);
+
     // document.querySelector(".main").style.height = screen.height + "px";
     // document.querySelector('.user_name').innerHTML = paramValue;
 
@@ -25,10 +28,8 @@ window.addEventListener("load", function () {
       });
     });
 
-    
-    document.querySelector('.content').style.marginTop = (document.querySelector('.bg').getBoundingClientRect().top + 180) + 'px'
-
-
+    document.querySelector(".content").style.marginTop =
+      document.querySelector(".bg").getBoundingClientRect().top + 200 + "px";
   }
 
   // 타겟 날짜 설정 (2024년 8월 10일 14시 30분)
@@ -116,7 +117,7 @@ function copyToClipboard(elementId) {
   if (document.querySelectorAll(".toast").length > 0) {
     return;
   } else {
-    showToast("계좌번호가 복사되었습니다.");
+    showToast("복사되었습니다.");
   }
 }
 
@@ -149,7 +150,7 @@ function startCountdown(targetDate, display) {
         " : " +
         pad(minutes) +
         " : " +
-        pad(seconds)
+        pad(seconds);
     }
   }, 1000);
 }
@@ -249,7 +250,17 @@ heartCount = function () {
   };
 };
 
+// fixed
+var scrollLinks = document.querySelectorAll(".scroll-to");
 
+scrollLinks.forEach(function (link) {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    var targetId = this.getAttribute("href").substring(1);
+    var targetElement = document.getElementById(targetId);
 
-// 탭
-
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
