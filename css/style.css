@@ -45,6 +45,12 @@ img {
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
+  opacity: 0;
+}
+
+.wrap.on {
+  transition: all 1s;
+  opacity: 1;
 }
 
 .bg {
@@ -55,6 +61,7 @@ img {
   flex-direction: column;
   -webkit-box-align: center;
   align-items: center;
+  bottom: -10px;
 }
 
 .bg-text {
@@ -146,8 +153,8 @@ img {
   position: relative;
   max-width: var(--max-width);
   width: 100%;
-  margin-top: 400px;
-  background: url(/img/paper.jpg);
+  margin-top: calc(100% - 100px);
+  background: url(/img/paper.png);
   background-size: contain;
   z-index: 2;
 }
@@ -200,7 +207,7 @@ img {
 
 .account-number li:not(:first-child) {
   margin-top: 10px;
-  padding-top: 10px;
+  padding-top: 17px;
   border-top: 1px solid #ccc;
 }
 
@@ -263,7 +270,8 @@ img {
 
 .dim {
   max-width: var(--max-width);
-  margin: 0 auto -100px;
+  margin: 0 auto -10px;
+  /* margin: 0 auto -100px; */
   position: fixed;
   left: 0;
   right: 0;
@@ -465,19 +473,19 @@ swiper-container {
   color: #c0c0c0;
 }
 
-.days div:hover {
-  background: #f0f0f0;
-  border-radius: 50%;
-}
-
 .count-down {
   width: 100%;
-  background: #fff;
-  padding: 20px;
+  background: url(/img/bg1.jpg) no-repeat;
+  background-size: cover;
+  background-position: 0;
+  padding: 100px 20px;
   text-align: center;
+  color: #fff;
+  text-shadow: 0px 0px 2px black;
 }
 
 .count-down p {
+  font-size: 20px;
 }
 .count-down .count {
   margin-top: 10px;
@@ -519,4 +527,33 @@ swiper-container {
 .heart-wrap button {
   padding: 20px;
   font-size: 20px;
+}
+
+
+/* 탭 */
+.swiper-container-tabs {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  background: #fff;
+}
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.tab {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #eee;
+}
+.tab.active {
+  background-color: #ddd;
+  font-weight: bold;
 }

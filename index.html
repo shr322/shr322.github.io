@@ -23,9 +23,10 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
   </head>
   <body>
-    <div id="wrap" class="wrap">
+    <div id="wrap" class="wrap ">
       <div class="bg">
-        <img src="bg.jpg" alt="" />
+        <!-- <img src="123123.png" alt="" /> -->
+        <img src="img/letter_back.png" alt="" />
         <div class="bg-text">
           <div class="bg-text-tit">
             형래와 수지의 결혼식에<br />소중한 분들을 초대합니다.
@@ -41,13 +42,16 @@
       <div class="content">
         <!-- 상단메인 -->
         <div class="main">
-          <img src="1.png" alt="" />
-          <img src="2.png" alt="" />
+          <img src="img/cont_img01.png" alt="" />
         </div>
         <!-- 상단메인 -->
 
         <div class="item section2 scroll-element">
-          <p>축복해 주세요.</p>
+          <img src="img/cont_img02.png" alt="" />
+          <p>저희 두 사람이<br>
+            이제 믿음과 사랑으로<br>
+            한 가정을 이루게 되었습니다.<br>
+            부디 함께 하시어 축복해 주시기 바랍니다.</p>
         </div>
         <div class="item section3 scroll-element">
           <p>
@@ -322,6 +326,21 @@
         </div>
         <!-- //갤러리3 -->
 
+        <div class="item">
+          <div class="tabs">
+            <div class="tab active" data-index="0">Tab 1</div>
+            <div class="tab" data-index="1">Tab 2</div>
+            <div class="tab" data-index="2">Tab 3</div>
+          </div>
+          <div class="swiper-container-tabs">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Content 1</div>
+              <div class="swiper-slide">Content 2</div>
+              <div class="swiper-slide">Content 3</div>
+            </div>
+          </div>
+        </div>
+
         <!-- 지도 -->
         <div class="item section4 scroll-element">
           <div class="map">
@@ -371,7 +390,7 @@
                       <p>신한은행 110-464-249470</p>
                       <button onclick="copyToClipboard('110464249470')">
                         <p>
-                          <img src="./img/copy.png" alt="" />
+                          <img src="img/copy.png" alt="" />
                           복사하기
                         </p>
                       </button>
@@ -383,7 +402,7 @@
                       <p>신한은행 110-464-249470</p>
                       <button onclick="copyToClipboard('110464249470')">
                         <p>
-                          <img src="./img/copy.png" alt="" />
+                          <img src="img/copy.png" alt="" />
                           복사하기
                         </p>
                       </button>
@@ -395,7 +414,7 @@
                       <p>신한은행 110-464-249470</p>
                       <button onclick="copyToClipboard('110464249470')">
                         <p>
-                          <img src="./img/copy.png" alt="" />
+                          <img src="img/copy.png" alt="" />
                           복사하기
                         </p>
                       </button>
@@ -430,7 +449,7 @@
                       <p>신한은행 110-464-249470</p>
                       <button onclick="copyToClipboard('110464249470')">
                         <p>
-                          <img src="./img/copy.png" alt="" />
+                          <img src="img/copy.png" alt="" />
                           복사하기
                         </p>
                       </button>
@@ -442,7 +461,7 @@
                       <p>신한은행 110-464-249470</p>
                       <button onclick="copyToClipboard('110464249470')">
                         <p>
-                          <img src="./img/copy.png" alt="" />
+                          <img src="img/copy.png" alt="" />
                           복사하기
                         </p>
                       </button>
@@ -454,7 +473,7 @@
                       <p>신한은행 110-464-249470</p>
                       <button onclick="copyToClipboard('110464249470')">
                         <p>
-                          <img src="./img/copy.png" alt="" />
+                          <img src="img/copy.png" alt="" />
                           복사하기
                         </p>
                       </button>
@@ -467,7 +486,6 @@
         </div>
         <!-- //토글 -->
 
-
         <div class="item scroll-element heart-wrap">
           <!-- 하트 카운트 -->
           <button id="heartButton" onclick="heartCount().setConfetti();">
@@ -479,19 +497,23 @@
 
         <div class="item scroll-element btn-wrap">
           <button id="add-schedule-btn">카카오톡 공유하기</button>
-          <button id="add-schedule-btn" onclick='copyToClipboard("https://shr322.github.io/")'>url 링크 복사하기</button>
-
+          <button
+            id="add-schedule-btn"
+            onclick='copyToClipboard("https://shr322.github.io/")'
+          >
+            url 링크 복사하기
+          </button>
         </div>
 
-
-        <img src="letter.png" alt="" />
+        <img src="img/letter_front.png" alt="" style="margin-bottom: -1px;"/>
       </div>
 
       <div class="dim" style="bottom: 0">
-        <img src="letter.png" alt="" />
+        <img src="img/letter_front.png" alt="" />
       </div>
     </div>
 
+    <script src="js/swiper-element-bundle.min.tab.js"></script>
     <script src="js/swiper-element-bundle.min.js"></script>
     <script src="js/jquery-3.7.1.js" crossorigin="anonymous"></script>
     <script
@@ -502,5 +524,31 @@
     <script src="js/confetti.browser.min.js"></script>
     <script src="js/heart.js" type="module"></script>
     <script src="js/common.js"></script>
+    <script>
+      var swiperTab = new Swiper(".swiper-container-tabs", {
+        spaceBetween: 30,
+        on: {
+          slideChange: function () {
+            updateTabs(swiperTab.activeIndex);
+          },
+        },
+      });
+
+      document.querySelectorAll(".tab").forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+          swiperTab.slideTo(index);
+        });
+      });
+
+      function updateTabs(activeIndex) {
+        document.querySelectorAll(".tab").forEach((tab, index) => {
+          if (index === activeIndex) {
+            tab.classList.add("active");
+          } else {
+            tab.classList.remove("active");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
