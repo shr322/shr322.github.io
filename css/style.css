@@ -60,6 +60,10 @@ img {
   width: 100%;
 }
 
+button, a {
+  color: #000;
+}
+
 .wrap {
   display: flex;
   position: relative;
