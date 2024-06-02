@@ -3,7 +3,7 @@
   --color-red1: #ecac44;
   --color-red2: #d65128;
 }
-
+.mgt0 {margin-top: 0 !important;}
 .mgt5 {
   margin-top: 5px !important;
 }
@@ -110,6 +110,11 @@ a {
   font-size: 16px;
   text-align: center;
   line-height: 30px;
+
+  position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .bg {
   max-width: 395px;
@@ -258,7 +263,7 @@ a {
 }
 
 .toggle-item:nth-child(1) .toggleButton {
-  background: #52754e30;
+  background: #e1e1e178;
 }
 .toggle-item:nth-child(2) .toggleButton {
   background: #ec9f0633;
@@ -411,7 +416,7 @@ canvas {
   height: auto;
   padding: 15px 15px;
   background: #fdf8ef;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 html,
