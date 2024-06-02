@@ -143,9 +143,10 @@ function startCountdown(targetDate, display) {
       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      display.textContent =
+     
+      document.querySelector('#countdownTimer .count').innerHTML =
         pad(days) +
-        "일 " +
+        "<span class='day'>일</span> " +
         pad(hours) +
         " : " +
         pad(minutes) +

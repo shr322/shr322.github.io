@@ -29,9 +29,11 @@
         <img src="img/letter_back.png" alt="" />
         <div class="bg-text">
           <div class="bg-text-tit">
-            형래와 수지의 결혼식에<br />소중한 분들을 초대합니다.
+            <span>THE</span>
+            <span>SAVE</span>
+            <span>DATE</span>
           </div>
-          <div class="bg-text-date">24.08.10(토) 14:30</div>
+          <!-- <div class="bg-text-date">24.08.10(토) 14:30</div> -->
           <a class="bg-arrow" href="#">
             <span></span>
             Scroll
@@ -45,7 +47,9 @@
           <img src="img/cont_img01.png" alt="" />
 
           <div class="main-text">
-            <p class="main-tit">신랑 심형래 , 신부 김수지</p>
+            <p class="main-tit">
+              <span>신랑</span> 심형래 , <span>신부</span> 김수지
+            </p>
             <div class="main-flex">
               <p class="red">heoung<br />rae</p>
               <p>X</p>
@@ -54,8 +58,8 @@
           </div>
 
           <div class="main-sub">
-            [THE STORY WITHOUT AN END] 의 시작<br />우리 이야기의 첫 페이지를
-            함께 채워주시길 바랍니다.
+            [THE STORY WITHOUT AN END]의<br />시작 우리 이야기의 첫 페이지를<br />함께
+            채워주시길 바랍니다.
           </div>
         </div>
         <!-- 상단메인 -->
@@ -366,7 +370,7 @@
               <div class="swiper-slide">
                 <i class="info-img"></i>
                 <div class="info-text">
-                  <p class="info-text01">VENUE - 장소안내</p>
+                  <p class="info-text01">VENUE - <span>장소안내</span></p>
                   <p class="info-text02">
                     6F, CHAPEL HALL<br />
                     국내 최고 높이의 12M 아치형 천고와 행복을 기원하는 조형
@@ -379,7 +383,7 @@
               <div class="swiper-slide">
                 <i class="info-img"></i>
                 <div class="info-text">
-                  <p class="info-text01">DINING - 식사 안내</p>
+                  <p class="info-text01">DINING - <span>식사안내</span></p>
                   <p class="info-text02">
                     SF, BANQUET HALL<br />
                     파인다이닝 스타 셰프들의 메뉴들이 뷔페식으로 제공됩니다.
@@ -392,7 +396,7 @@
               <div class="swiper-slide">
                 <i class="info-img"></i>
                 <div class="info-text">
-                  <p class="info-text01">PARKING - 주차 안내</p>
+                  <p class="info-text01">PARKING - <span>주차안내</span></p>
                   <p class="info-text02">
                     내부&amp;외부 주차장<br />
                     예식장 내부 주차장에 200대와 강남구청역 근처 외부 주차장에
@@ -564,7 +568,7 @@
               <li>
                 <p class="info_wrap_title">지도</p>
                 <p class="info_wrap_txt">
-                  원하는 지도을 선택하시면 화면이 열립니다.
+                  원하는 지도를 선택하시면 화면이 열립니다.
                 </p>
                 <div class="location_button_box">
                   <a
@@ -602,8 +606,8 @@
                 <p class="info_wrap_txt">
                   *지하철 7호선 강남구청역 / 지하철 수인분당선 강남구청역<br />
                   - 3-1번 출구<br />
-                  - 도보 8분 거리 
-                  <br><br>
+                  - 도보 8분 거리
+                  <br /><br />
                   *지하철 수인분당선 압구정로데오역<br />
                   - 5번 출구<br />
                   - 도보 9분 거리
@@ -625,8 +629,13 @@
         <div class="item scroll-element heart-wrap">
           <!-- 하트 카운트 -->
           <button id="heartButton" onclick="heartCount().setConfetti();">
-            ❤️ <span id="heartCount">0</span>
+            <i class="heart">
+              <img src="img/heart.png" alt="" class="heart-icon">
+              <img src="img/heart_on.png" alt="" class="heart-icon active">
+            </i>
           </button>
+          <div id="heartCount">0</div>
+
           <canvas id="canvas1"></canvas>
           <!-- //하트 카운트 -->
         </div>
@@ -637,7 +646,7 @@
             id="add-schedule-btn"
             onclick='copyToClipboard("https://shr322.github.io/")'
           >
-            url 링크 복사하기
+            청첩장 주소 복사하기
           </button>
         </div>
 
@@ -652,10 +661,13 @@
         <a class="scroll-to" href="#target1">달력</a>
         <a class="scroll-to" href="#target2">위치</a>
         <a class="scroll-to" href="#target3">사진</a>
-        <a class="scroll-to" onclick="Kakao.Link.sendCustom({ templateId: 108113 });">카카오톡공유하기</a>
+        <a
+          class="scroll-to"
+          onclick="Kakao.Link.sendCustom({ templateId: 108113 });"
+          >카카오톡공유하기</a
+        >
       </div>
     </div>
-
 
     <script src="js/swiper-element-bundle.min.tab.js"></script>
     <script src="js/swiper-element-bundle.min.js"></script>
