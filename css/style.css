@@ -59,7 +59,7 @@ body {
 img {
   width: 100%;
 }
-
+a {text-decoration: none;}
 button,
 a {
   color: #000;
@@ -712,13 +712,16 @@ swiper-container {
   font-size: 12px;
 }
 .region-two {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 10px;
 }
 
 .fixed--bar {
   width: 100%;
   height: 50px;
-  background: skyblue;
+  background: #ca5c19;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -728,8 +731,21 @@ swiper-container {
   align-items: center;
 }
 .scroll-to {
+  position: relative;
   width: 100%;
+  height: 100%;
+  line-height: 50px;
   text-align: center;
+}
+
+.scroll-to:not(:first-child)::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 1px;
+  height: 60%;
+  background: #434343;
 }
 
 .tab.active {
@@ -837,4 +853,10 @@ swiper-container {
   color: #666;
   letter-spacing: -0.4px;
   line-height: 22px;
+}
+
+.location_copy_flex {
+  display: flex;
+  align-items: center;
+
 }
