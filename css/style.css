@@ -82,11 +82,13 @@ a {
 
 .main {
   position: relative;
+  background: url(/img/paper.png) no-repeat;
+  background-size: cover;
 }
 
 .main-text {
   position: absolute;
-  top: 80%;
+  top: 78%;
   left: 40%;
 }
 
@@ -112,10 +114,24 @@ a {
   line-height: 30px;
 
   position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
 }
+.main-sub::before {
+  content: '"';
+  position: absolute;
+  top: 0;
+  left: -9px;
+}
+.main-sub::after {
+  content: '"';
+  position: absolute;
+  bottom: 0;
+  right: -9px;
+}
+
+
 .bg {
   max-width: 395px;
   position: fixed;
@@ -311,8 +327,8 @@ a {
   position: relative;
   width: 100%;
   height: 100%;
-  margin-top: 50px;
-  padding: 0 15px;
+  /* margin-top: 30px; */
+  padding: 30px 15px 0;
 }
 
 .item:first-child {
@@ -333,9 +349,9 @@ a {
   gap: 6px;
 }
 
-.section4 {
+/* .section4 {
   margin-top: 50px;
-}
+} */
 .section4 h1 {
   text-align: center;
   font-size: 24px;
@@ -416,7 +432,7 @@ canvas {
   height: auto;
   padding: 15px 15px;
   background: #fdf8ef;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 html,
@@ -531,9 +547,9 @@ swiper-container {
 }
 
 .days div.active {
-  color: #000;
+  color: #fff;
 }
-.days div.active::after {
+/* .days div.active::after {
   position: absolute;
   background: var(--color-red1);
   content: "";
@@ -544,7 +560,7 @@ swiper-container {
   transform: translate(-50%, -50%);
   z-index: -1;
   border-radius: 50%;
-}
+} */
 
 .weekdays {
   /* background: #0d6efd; */
@@ -566,6 +582,7 @@ swiper-container {
   background-size: cover;
   background-position: 0;
   padding: 70px 20px;
+  margin-top: 30px;
   text-align: center;
   color: #fff;
   text-shadow: 0px 0px 2px black;
@@ -588,7 +605,7 @@ swiper-container {
   align-items: center;
   justify-content: space-between;
   padding: 20px 15px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-width: 1px 0 1px 0;
 }
 
@@ -680,21 +697,22 @@ swiper-container {
   border-radius: 50%;
 }
 .person-img .shr-face {
-  background-image: url(/img/1-6.jpg);
+  background-image: url(/img/shr.jpeg);
   background-repeat: no-repeat;
-  background-size: 200%;
-  background-position: center -49px;
+  background-size: 130%;
+  background-position: center -28px;
 }
 .person-img .ksj-face {
-  background-image: url(/img/1-8.jpg);
+  background-image: url(/img/ksj.jpg);
   background-repeat: no-repeat;
-  background-size: 200%;
-  background-position: -70px -72px;
+  background-size: 130%;
+  background-position: center -18px;
 }
 
 .title {
+  opacity: .5;
   display: block;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   color: var(--color-red1);
   text-align: center;
@@ -809,7 +827,7 @@ swiper-container {
 }
 
 .sub-title {
-  margin-top: 30px;
+  margin-top: 20px;
   line-height: 34px;
   font-size: 20px;
   text-align: center;
@@ -859,4 +877,33 @@ swiper-container {
   display: flex;
   align-items: center;
 
+}
+.cal-heart-icon {
+  width: 25px;
+  height: 25px;
+  background: var(--color-red2);
+  position: absolute;
+  top: 28%;
+  left: 26%;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+.cal-heart-icon::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: -50%;
+  border-radius: 50%;
+  background: var(--color-red2);
+}
+.cal-heart-icon::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -50%;
+  right: 0;
+  border-radius: 50%;
+  background: var(--color-red2);
 }
