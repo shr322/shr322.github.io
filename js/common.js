@@ -55,9 +55,9 @@ var parameterValue = getParameterByName("map");
 var elluce = new naver.maps.LatLng(37.5222098, 127.038892);
 var map = new naver.maps.Map("map", {
   center: new naver.maps.LatLng(37.5222098, 127.038892),
-  zoom: 17,
+  zoom: 16,
   minZoom: 8, //지도의 최소 줌 레벨
-  zoomControl: false, //줌 컨트롤의 표시 여부
+  zoomControl: true, //줌 컨트롤의 표시 여부
   zoomControlOptions: {
     //줌 컨트롤의 옵션
     position: naver.maps.Position.TOP_RIGHT,
@@ -65,7 +65,7 @@ var map = new naver.maps.Map("map", {
 });
 var marker = new naver.maps.Marker({
   icon: {
-    url: "./icon/heart-icon.png",
+    // url: "./icon/heart-icon.png",
     scaledSize: new naver.maps.Size(30, 37),
     origin: new naver.maps.Point(0, 0),
   },
@@ -83,7 +83,7 @@ var contentString = [
 var infowindow = new naver.maps.InfoWindow({
   content: contentString,
   maxWidth: 200,
-  height: 100,
+  height: 50,
   backgroundColor: "white",
   borderColor: "black",
   borderWidth: 2,
