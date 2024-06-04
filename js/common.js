@@ -64,11 +64,6 @@ var map = new naver.maps.Map("map", {
   },
 });
 var marker = new naver.maps.Marker({
-  icon: {
-    // url: "./icon/heart-icon.png",
-    scaledSize: new naver.maps.Size(30, 37),
-    origin: new naver.maps.Point(0, 0),
-  },
   position: elluce,
   map: map,
 });
