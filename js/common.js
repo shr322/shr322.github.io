@@ -83,7 +83,7 @@ var contentString = [
 var infowindow = new naver.maps.InfoWindow({
   content: contentString,
   maxWidth: 200,
-  height: 50,
+  height: 100,
   backgroundColor: "white",
   borderColor: "black",
   borderWidth: 2,
