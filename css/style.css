@@ -90,8 +90,8 @@ a {
 
 .main {
   position: relative;
-  background: url(/img/paper.png) no-repeat;
-  background-size: cover;
+  /* background: url(/img/paper.png) no-repeat;
+  background-size: cover; */
 }
 
 .main-text {
@@ -277,7 +277,7 @@ a {
   font-size: 16px;
   cursor: pointer;
   width: 100%;
-
+  font-family: "Noto Serif KR", serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -625,8 +625,8 @@ swiper-container {
 .count-down .title{ position: relative; z-index: 1;}
 .count-down p {
   position: relative;
-  margin-top: 18px;
-  font-size: 20px;
+  margin-top: 20px;
+  font-size: 18px;
   z-index: 1;
 }
 .count-down .count {
