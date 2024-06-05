@@ -3,6 +3,7 @@
   --color-red1: #ecac44;
   --color-red2: #d65128;
 }
+.bg-fdf8ef {background: #fdf8ef !important;}
 .mgt0 {margin-top: 0 !important;}
 .mgt5 {
   margin-top: 5px !important;
@@ -17,6 +18,11 @@
   margin-top: 20px !important;
 }
 
+.pdt30 {padding-top: 30px !important;}
+.pdb30 {padding-bottom: 30px !important;}
+.pdb0 {padding-bottom: 0 !important;}
+.pdt0 {padding-top: 0 !important;}
+
 .fw-300 {
   font-weight: 300 !important;
 }
@@ -29,6 +35,8 @@
 .fw-700 {
   font-weight: 700 !important;
 }
+
+.pdb30 {padding-bottom: 30px !important;}
 
 .red {
   color: var(--color-red2);
@@ -88,7 +96,7 @@ a {
 
 .main-text {
   position: absolute;
-  top: 78%;
+  top: 85%;
   left: 40%;
 }
 
@@ -109,14 +117,20 @@ a {
   font-size: 18px;
 }
 .main-sub {
-  font-size: 16px;
+  display: inline-block;
+  margin-top: 30px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    position: relative;
+  /* font-size: 16px;
   text-align: center;
   line-height: 30px;
 
   position: absolute;
     bottom: 50px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
 }
 .main-sub::before {
   content: '"';
@@ -328,7 +342,7 @@ a {
   width: 100%;
   height: 100%;
   /* margin-top: 30px; */
-  padding: 30px 15px 0;
+  padding: 30px 15px;
 }
 
 .item:first-child {
@@ -428,10 +442,15 @@ canvas {
 }
 
 /* gallery */
+.gallery-box {
+  background: #fdf8ef;
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .gallery {
   height: auto;
   padding: 15px 15px;
-  background: #fdf8ef;
+  /* background: #fdf8ef; */
   /* margin-top: 30px; */
 }
 
@@ -492,6 +511,7 @@ swiper-container {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); */
   width: 100%;
   margin-top: 30px;
+  padding: 0 20px;
 }
 /* 
 .calendar .sat {
@@ -577,6 +597,7 @@ swiper-container {
 }
 
 .count-down {
+  position: relative;
   width: 100%;
   background: url(/img/bg1.jpg) no-repeat;
   background-size: cover;
@@ -585,16 +606,32 @@ swiper-container {
   margin-top: 30px;
   text-align: center;
   color: #fff;
-  text-shadow: 0px 0px 2px black;
+  /* text-shadow: 0px 0px 2px black; */
 }
 
+.count-down::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000096;
+  z-index: 0;
+}
+
+.count-down .title{ position: relative; z-index: 1;}
 .count-down p {
+  position: relative;
   margin-top: 20px;
   font-size: 20px;
+  z-index: 1;
 }
 .count-down .count {
+  position: relative;
   margin-top: 20px;
-  font-size: 40px;
+  font-size: 42px;
+  z-index: 1;
 }
 .count-down .count .day {
   font-size: 16px;
@@ -680,6 +717,7 @@ swiper-container {
   margin-top: 30px;
 }
 .tab {
+  font-size: 14px;
   width: 100%;
   text-align: center;
   padding: 10px;
@@ -712,11 +750,12 @@ swiper-container {
 .title {
   opacity: .5;
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
   color: var(--color-red1);
   text-align: center;
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .region {
@@ -738,8 +777,8 @@ swiper-container {
 
 .fixed--bar {
   width: 100%;
-  height: 50px;
-  background: #ca5c19;
+  height: 40px;
+  background: #fff;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -752,18 +791,19 @@ swiper-container {
   position: relative;
   width: 100%;
   height: 100%;
-  line-height: 50px;
+  line-height: 40px;
   text-align: center;
 }
 
 .scroll-to:not(:first-child)::after {
   content: '';
-  position: absolute;
-  top: 10px;
-  left: 0;
-  width: 1px;
-  height: 60%;
-  background: #434343;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 1px;
+    height: 35%;
+    background: #d65128;
 }
 
 .tab.active {
@@ -812,11 +852,11 @@ swiper-container {
   gap: 4px;
 }
 .info-text .info-text01 span {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 .info-text .info-text02 {
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 15px;
   line-height: 24px;
   color: #666;
@@ -863,10 +903,10 @@ swiper-container {
 
 .info_wrap_title {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
 }
 .info_wrap_txt {
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 10px;
   color: #666;
   letter-spacing: -0.4px;
@@ -876,6 +916,7 @@ swiper-container {
 .location_copy_flex {
   display: flex;
   align-items: center;
+  font-weight: 600;
 
 }
 .cal-heart-icon {
@@ -884,7 +925,7 @@ swiper-container {
   background: var(--color-red2);
   position: absolute;
   top: 28%;
-  left: 26%;
+  left: 22%;
   transform: rotate(45deg);
   z-index: -1;
 }
