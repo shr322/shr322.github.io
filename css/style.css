@@ -113,8 +113,9 @@ a {
   align-items: center;
   text-transform: uppercase;
   gap: 10px;
-  margin-top: 10px;
-  font-size: 18px;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
 }
 .main-sub {
   display: inline-block;
@@ -623,7 +624,7 @@ swiper-container {
 .count-down .title{ position: relative; z-index: 1;}
 .count-down p {
   position: relative;
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 20px;
   z-index: 1;
 }
@@ -748,7 +749,7 @@ swiper-container {
 }
 
 .title {
-  opacity: .5;
+  /* opacity: .5; */
   display: block;
   font-size: 12px;
   font-weight: 300;
