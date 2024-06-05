@@ -621,6 +621,7 @@ swiper-container {
   z-index: 0;
 }
 
+
 .count-down .title{ position: relative; z-index: 1;}
 .count-down p {
   position: relative;
@@ -792,9 +793,14 @@ swiper-container {
   position: relative;
   width: 100%;
   height: 100%;
-  line-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
+
+.scroll-to:nth-child(4) .material-symbols-outlined {color: var(--color-red2);}
+
 
 .scroll-to:not(:first-child)::after {
   content: '';
