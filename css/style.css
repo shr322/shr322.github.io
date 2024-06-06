@@ -955,3 +955,14 @@ swiper-container {
   border-radius: 50%;
   background: var(--color-red2);
 }
+
+.click {
+  font-size: 12px;
+  animation: click 1.5s infinite;
+}
+
+@keyframes click {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(10px);}
+  100% {transform: translateY(0px);}
+}
