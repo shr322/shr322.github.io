@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Counter</title>
+    <style>
+        #clickButton {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #clickButton:disabled {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <button id="clickButton">Click me!</button>
+    <p id="clickCount">0</p>
+
+    <script>
+        // 클릭 횟수와 리셋 날짜를 저장하는 변수
+        let clickCount = parseInt(localStorage.getItem("clickCount")) || 0;
+        let resetDate = localStorage.getItem("resetDate");
+
+        // 현재 날짜 (YYYY-MM-DD 형식)
+        const today = new Date().toISOString().split('T')[0];
+
+        // 날짜가 변경되었는지 확인하여 초기화
+        if (resetDate !== today) {
+            clickCount = 0;
+            resetDate = today;
+            alert(resetDate)
+            localStorage.setItem("clickCount", clickCount);
+            localStorage.setItem("resetDate", resetDate);
+        }
+
+        // 클릭 횟수와 버튼 상태 업데이트 함수
+        function updateUI() {
+            document.getElementById("clickCount").textContent = clickCount;
+            document.getElementById("clickButton").disabled = clickCount >= 10;
+        }
+
+        // UI 초기화
+        updateUI();
+
+        // 버튼 클릭 이벤트 추가
+        document.getElementById("clickButton").addEventListener("click", function() {
+            if (clickCount < 10) {
+                clickCount++;
+                localStorage.setItem("clickCount", clickCount);
+                updateUI();
+            }
+        });
+
+        // 자정에 리셋하기 위한 타이머 설정
+        function getMillisecondsUntilMidnight() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0); // 자정 (00:00)
+            return midnight.getTime() - now.getTime();
+        }
+
+        setTimeout(function() {
+            clickCount = 0;
+            resetDate = new Date().toISOString().split('T')[0];
+            localStorage.setItem("clickCount", clickCount);
+            localStorage.setItem("resetDate", resetDate);
+            updateUI();
+            // 자정마다 리셋 타이머 다시 설정
+            setInterval(function() {
+                clickCount = 0;
+                resetDate = new Date().toISOString().split('T')[0];
+                alert(resetDate)
+                localStorage.setItem("clickCount", clickCount);
+                localStorage.setItem("resetDate", resetDate);
+                updateUI();
+            }, 24 * 60 * 60 * 1000);
+        }, getMillisecondsUntilMidnight());
+    </script>
+</body>
+</html>
