@@ -129,7 +129,7 @@ function startCountdown(targetDate, display) {
 
     if (distance <= 0) {
       clearInterval(interval);
-      display.textContent = "이벤트 종료!";
+      document.getElementById('countdownTimer').innerHTML = '<p style="margin-top:0;">축하해 주신 분들께<br>진심으로 감사드립니다. <br>행복하게 잘 살겠습니다.</p>';
     } else {
       let days = Math.floor(distance / (1000 * 60 * 60 * 24));
       let hours = Math.floor(
